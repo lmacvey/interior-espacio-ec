@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+:root {
+  /* ── Surfaces ── */
+  --background:           #F2E7D3;   /* client: linen cream — warm page base */
+  --surface-1:            #D7C5AE;   /* client: warm sand — clearly distinct sections */
+  --surface-2:            #C9B49C;   /* derived: deeper sand — cards on surface-1 */
+  --foreground:           #4A4745;   /* client: warm charcoal */
+
+  /* ── Text ── */
+  --text-primary:         #4A4745;   /* client charcoal — headings, strong copy */
+  --text-secondary:       #5a5755;   /* derived: slightly lighter charcoal — body copy */
+  --text-muted:           #6a6158;   /* derived: warm mid-grey — captions, overlines */
+  --text-inverse:         #F2E7D3;   /* linen cream — on dark/primary backgrounds */
+
+  /* ── Primary: Sage Green ── */
+  --primary:              #6E7C5C;   /* client: sage green — therapeutic trust */
+  --primary-hover:        #586748;   /* derived: 15% darker sage */
+  --primary-light:        #B8C8A8;   /* derived: light sage — icon containers, pill tags */
+  --primary-muted:        #D8E3CE;   /* derived: very light sage — hero blob, section tints */
+  --primary-foreground:   #ffffff;   /* white on sage — best WCAG (4.5:1) */
+
+  /* ── Secondary: Cognac ── */
+  --secondary:            #A56C3D;   /* client: cognac — warmth, earth, accent CTAs */
+  --secondary-hover:      #8A5A31;   /* derived: deeper cognac */
+  --secondary-light:      #D4A87A;   /* derived: light cognac tint */
+  --secondary-foreground: #ffffff;   /* white on cognac — passes AA */
+
+  /* ── Accent: Espresso ── */
+  --accent:               #6B4428;   /* client: espresso — depth, decorative borders */
+  --accent-hover:         #573620;   /* derived: deeper espresso */
+  --accent-light:         #C09878;   /* derived: medium warm brown */
+  --accent-foreground:    #F2E7D3;   /* linen cream on dark espresso */
+
+  /* ── Borders ── */
+  --border:               #C4B09C;   /* derived: warm tan — visible on linen bg */
+  --border-strong:        #A89078;   /* derived: darker for focused inputs */
+  --border-subtle:        #D7C5AE;   /* = surface-1 — hairlines, soft dividers */
+
+  /* ── Semantic ── */
+  --success:              #4a7c59;
+  --success-light:        #d8ece0;
+  --warning:              #b07030;
+  --warning-light:        #f0dfc0;
+  --destructive:          #c0392b;
+  --destructive-light:    #fde8e6;
+
+  /* ── Interaction ── */
+  --ring:                 #6E7C5C;   /* = primary */
+  --ring-offset:          #F2E7D3;   /* = background */
+  --overlay:              rgba(74, 71, 69, 0.5);
+
+  /* ── Shadows — warm-toned, visible depth ── */
+  --shadow-xs: 0 1px 3px rgba(74,71,69,0.10);
+  --shadow-sm: 0 2px 8px rgba(74,71,69,0.14);
+  --shadow-md: 0 4px 16px rgba(74,71,69,0.18);
+  --shadow-lg: 0 8px 32px rgba(74,71,69,0.24);
+
+  /* ── Border radius ── */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   18px;
+  --radius-xl:   24px;
+  --radius-2xl:  32px;
+  --radius-full: 9999px;
+
+  /* ── Spacing ── */
+  --section-padding-y-sm:  64px;
+  --section-padding-y-md:  96px;
+  --section-padding-y-lg:  128px;
+  --max-w-content:         672px;
+  --max-w-layout:          1024px;
+  --max-w-wide:            1152px;
+  --card-padding:          24px;
+  --card-padding-lg:       32px;
+
+  /* ── Typography scale ── */
+  --text-display-xl:  3rem;
+  --text-display-lg:  2.25rem;
+  --text-display-md:  1.875rem;
+  --text-display-sm:  1.5rem;
+  --text-display-xs:  1.25rem;
+  --text-body-xl:     1.25rem;
+  --text-body-lg:     1.125rem;
+  --text-body-md:     1rem;
+  --text-body-sm:     0.875rem;
+  --text-body-xs:     0.75rem;
+
+  /* ── Line heights ── */
+  --leading-display:  1.15;
+  --leading-heading:  1.25;
+  --leading-body:     1.65;
+  --leading-relaxed:  1.75;
+
+  /* ── Letter spacing ── */
+  --tracking-display:  -0.02em;
+  --tracking-heading:  -0.01em;
+  --tracking-overline:  0.1em;
+
+  /* ── Legacy aliases (keeps existing Tailwind classes working) ── */
+  --muted:            var(--surface-1);
+  --muted-foreground: var(--text-secondary);
+}
+
+@theme inline {
+  --color-background:           var(--background);
+  --color-surface-1:            var(--surface-1);
+  --color-surface-2:            var(--surface-2);
+  --color-foreground:           var(--foreground);
+  --color-text-primary:         var(--text-primary);
+  --color-text-secondary:       var(--text-secondary);
+  --color-text-muted:           var(--text-muted);
+  --color-text-inverse:         var(--text-inverse);
+  --color-primary:              var(--primary);
+  --color-primary-hover:        var(--primary-hover);
+  --color-primary-light:        var(--primary-light);
+  --color-primary-muted:        var(--primary-muted);
+  --color-primary-foreground:   var(--primary-foreground);
+  --color-secondary:            var(--secondary);
+  --color-secondary-hover:      var(--secondary-hover);
+  --color-secondary-light:      var(--secondary-light);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent:               var(--accent);
+  --color-accent-hover:         var(--accent-hover);
+  --color-accent-light:         var(--accent-light);
+  --color-accent-foreground:    var(--accent-foreground);
+  --color-border:               var(--border);
+  --color-border-strong:        var(--border-strong);
+  --color-border-subtle:        var(--border-subtle);
+  --color-success:              var(--success);
+  --color-success-light:        var(--success-light);
+  --color-warning:              var(--warning);
+  --color-warning-light:        var(--warning-light);
+  --color-destructive:          var(--destructive);
+  --color-destructive-light:    var(--destructive-light);
+  --color-ring:                 var(--ring);
+  --color-muted:                var(--muted);
+  --color-muted-foreground:     var(--muted-foreground);
+  --font-sans:    var(--font-inter);
+  --font-display: var(--font-playfair);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-playfair), Georgia, serif;
+  letter-spacing: var(--tracking-heading);
+}
+
+h1 {
+  letter-spacing: var(--tracking-display);
+}
+
+/* ── Focus styles ── */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ring-offset), 0 0 0 5px var(--ring);
+}
+
+/* ── Radix Accordion animations ── */
+@keyframes accordion-down {
+  from { height: 0; opacity: 0; }
+  to   { height: var(--radix-accordion-content-height); opacity: 1; }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); opacity: 1; }
+  to   { height: 0; opacity: 0; }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-accordion-up {
+  animation: accordion-up 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

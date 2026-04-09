@@ -1,0 +1,16 @@
+export { InicioIcon } from "./InicioIcon";
+export { SobreMiIcon } from "./SobreMiIcon";
+export { ServiciosIcon } from "./ServiciosIcon";
+export { BlogIcon } from "./BlogIcon";
+export { ContactoIcon } from "./ContactoIcon";
+export { AgendaIcon } from "./AgendaIcon";
+export { ArrowRightIcon } from "./ArrowRightIcon";
+export { ChevronDownIcon } from "./ChevronDownIcon";
+export { CloseIcon } from "./CloseIcon";
+export { MenuIcon } from "./MenuIcon";
+export { ExternalLinkIcon } from "./ExternalLinkIcon";
+export { WhatsAppIcon } from "./WhatsAppIcon";
+export { PinterestIcon } from "./PinterestIcon";
+export { InstagramIcon } from "./InstagramIcon";
+export { FacebookIcon } from "./FacebookIcon";
+export { LinkedInIcon } from "./LinkedInIcon";
