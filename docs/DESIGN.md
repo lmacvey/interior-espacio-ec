@@ -1,8 +1,8 @@
-# Interior Espacio — Design Document
+# Espacio Interior — Design Document
 
 ## 1. Project Overview
 
-**Interior Espacio** is an online therapy practice website built for a Spanish-speaking audience (Ecuador / Latin America). The site serves as the public-facing presence for a solo therapist offering 100% online individual therapy, with a focus on life transitions and internal processes.
+**Espacio Interior** is an online therapy practice website built for a Spanish-speaking audience (Ecuador / Latin America). The site serves as the public-facing presence for a solo therapist offering 100% online individual therapy, with a focus on life transitions and internal processes.
 
 **Primary goals:**
 - Establish trust and communicate warmth before a prospective client ever books
@@ -235,7 +235,7 @@ contactSchema = {
 ## 10. SEO
 
 - `Metadata` exported from every page with `title` and `description`
-- Root layout uses `title.template`: `"%s | Interior Espacio"`
+- Root layout uses `title.template`: `"%s | Espacio Interior"`
 - `openGraph.locale` set to `es_EC`
 - Keywords: terapia en línea, psicología, transiciones de vida, salud mental, acompañamiento emocional, Ecuador
 - All pages are statically pre-rendered at build time (except `/api/contact` and `/blog/[slug]`)

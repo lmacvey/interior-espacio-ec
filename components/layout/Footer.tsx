@@ -57,7 +57,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-border px-4 md:px-6 py-4 text-center text-xs text-text-muted pb-safe">
-        © {new Date().getFullYear()} Interior Espacio. Todos los derechos reservados.
+        © {new Date().getFullYear()} Espacio Interior. Todos los derechos reservados.
       </div>
     </footer>
   );

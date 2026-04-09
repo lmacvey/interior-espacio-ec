@@ -1,10 +1,10 @@
-# Interior Espacio — Branding & UI/UX Specification
+# Espacio Interior — Branding & UI/UX Specification
 
 ## Brand Philosophy
 
 **North star**: "A person reading this site should feel less alone after 10 seconds."
 
-The name "Interior Espacio" carries the brand's entire philosophy in two words: the inner world (*interior*) and the room it deserves (*espacio*). The site should feel like walking into a quiet, well-lit room where nothing is loud and everything is deliberate.
+The name "Espacio Interior" carries the brand's entire philosophy in two words: the inner world (*interior*) and the room it deserves (*espacio*). The site should feel like walking into a quiet, well-lit room where nothing is loud and everything is deliberate.
 
 ### Voice and Tone
 

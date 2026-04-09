@@ -14,7 +14,7 @@ export default function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#5f7260",
+          backgroundColor: "#6E7C5C",
           padding: "80px",
         }}
       >
@@ -57,7 +57,7 @@ export default function Image() {
             fontFamily: "Georgia, serif",
           }}
         >
-          Interior Espacio
+          Espacio Interior
         </div>
 
         <div

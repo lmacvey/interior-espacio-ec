@@ -13,7 +13,7 @@ export default function AdminLayout({
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b px-6 py-4 flex items-center justify-between">
-        <span className="font-semibold text-sm">Interior Espacio — Admin</span>
+        <span className="font-semibold text-sm">Espacio Interior — Admin</span>
         <form action="/api/admin/logout" method="POST">
           <button
             type="submit"

@@ -1,4 +1,4 @@
-# Interior Espacio — UI/UX Redesign (ES first, EN second, Mobile-first)
+# Espacio Interior — UI/UX Redesign (ES first, EN second, Mobile-first)
 
 ## Context
 The scaffolded site is in English with generic therapy copy. The real therapist specialises in **online therapy for life transitions**. We build **everything in Spanish first, mobile-first** using Tailwind's `sm:` / `md:` / `lg:` breakpoint escalation (write for small screen, override up). A placeholder name `[Nombre de Terapeuta]` is used throughout.
@@ -31,12 +31,12 @@ Added:
 
 ### A2. `components/Logo.tsx`
 SVG icon (two counter-rotated organic petal forms creating a visible inner space + centre dot) + wordmark.
-- `size="sm"` — icon + "Interior Espacio" wordmark only (used in Header)
+- `size="sm"` — icon + "Espacio Interior" wordmark only (used in Header)
 - `size="md"` — adds "Terapia en Línea" subtitle (used in Footer)
 
 ### A3. `app/layout.tsx`
 - `<html lang="es">`
-- Metadata: title `"Interior Espacio | Terapia en Línea"`, Spanish description, locale `es_EC`
+- Metadata: title `"Espacio Interior | Terapia en Línea"`, Spanish description, locale `es_EC`
 
 ### A4. `components/layout/Header.tsx`
 - Logo (`size="sm"`)

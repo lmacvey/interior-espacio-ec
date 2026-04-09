@@ -2,237 +2,128 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Logo Preview — Interior Espacio</title>
+  <title>Logo Preview — Espacio Interior</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --primary: #5f7260;
-      --bg: #e8ede8;
-      --bg-dark: #1c2320;
-      --muted: #78716c;
-    }
-
+    :root { --primary: #5f7260; --sage: #e8ede8; --dark: #1c2320; --muted: #78716c; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Inter', sans-serif;
-      background: #f0f2f0;
+      background: #eceee9;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 48px;
-      padding: 48px 24px;
+      gap: 40px;
+      padding: 56px 24px;
     }
-
-    h2 {
-      font-family: 'Inter', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .card {
-      background: #faf9f7;
-      border-radius: 16px;
-      padding: 40px 56px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 32px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-      min-width: 360px;
-    }
-
-    .card.dark { background: var(--bg-dark); }
-    .card.sage  { background: var(--bg); }
-
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--primary);
-    }
-
-    .logo.dark-text { color: #c8dac8; }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
-
-    .logo-name {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      font-size: 20px;
-      letter-spacing: -0.02em;
-      color: inherit;
-    }
-
-    .logo-sub {
-      font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    .logo.dark-text .logo-sub { color: #7a9a7a; }
-
-    .sizes {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .size-label {
-      font-size: 10px;
-      color: #aaa;
-      text-align: center;
-      margin-top: 6px;
-    }
-
-    .size-item { display: flex; flex-direction: column; align-items: center; }
-
-    hr.divider {
-      width: 100%;
-      border: none;
-      border-top: 1px solid rgba(107,127,107,0.12);
-    }
+    .label { font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #999; margin-bottom: 16px; text-align: center; }
+    .card { border-radius: 20px; padding: 44px 60px; display: flex; flex-direction: column; align-items: center; gap: 36px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); min-width: 360px; }
+    .card.light { background: #faf9f7; }
+    .card.sage  { background: var(--sage); }
+    .card.dark  { background: var(--dark); }
+    .logo { display: inline-flex; align-items: center; gap: 11px; color: var(--primary); }
+    .logo.inv { color: #c8dac8; }
+    .name { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 20px; letter-spacing: -0.02em; color: inherit; }
+    .sub { font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 5px; }
+    .logo.inv .sub { color: #7a9a7a; }
+    .row { display: flex; align-items: center; gap: 36px; flex-wrap: wrap; justify-content: center; }
+    .col { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .px { font-size: 10px; color: #bbb; }
+    hr { width: 100%; border: none; border-top: 1px solid rgba(107,127,107,0.15); }
   </style>
 </head>
 <body>
 
-  <!-- LIGHT BACKGROUND -->
+  <!-- Light -->
   <div>
-    <h2>Light — default usage (#faf9f7)</h2>
-    <div class="card">
-
-      <!-- Full lockup -->
+    <p class="label">Light — #faf9f7</p>
+    <div class="card light">
       <div class="logo">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-                fill="currentColor" opacity="0.15" transform="rotate(-18, 18, 18)" />
-          <path d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-                fill="currentColor" opacity="0.40" transform="rotate(18, 18, 18)" />
-          <circle cx="18" cy="17" r="2.6" fill="currentColor" />
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <path d="M 18 27 C 16 21, 9 14, 5 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity="0.85"/>
+          <path d="M 18 27 C 21 21, 27 15, 31 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.42"/>
+          <circle cx="18" cy="29" r="2.5" fill="currentColor"/>
         </svg>
-        <div class="logo-text">
-          <span class="logo-name">Interior Espacio</span>
-          <span class="logo-sub">Terapia en Línea</span>
+        <div>
+          <div class="name">Espacio Interior</div>
+          <div class="sub">Terapia en Línea</div>
         </div>
       </div>
-
-      <hr class="divider" />
-
-      <!-- Size scale -->
-      <div class="sizes">
-
-        <div class="size-item">
+      <hr/>
+      <div class="row">
+        <div class="col">
           <div class="logo">
-            <svg width="24" height="24" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-                    fill="currentColor" opacity="0.15" transform="rotate(-18, 18, 18)" />
-              <path d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-                    fill="currentColor" opacity="0.40" transform="rotate(18, 18, 18)" />
-              <circle cx="18" cy="17" r="2.6" fill="currentColor" />
+            <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
+              <path d="M 18 27 C 16 21, 9 14, 5 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity="0.85"/>
+              <path d="M 18 27 C 21 21, 27 15, 31 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.42"/>
+              <circle cx="18" cy="29" r="2.5" fill="currentColor"/>
             </svg>
-            <div class="logo-text">
-              <span class="logo-name" style="font-size:16px">Interior Espacio</span>
-            </div>
+            <span class="name" style="font-size:16px">Espacio Interior</span>
           </div>
-          <span class="size-label">Header (sm)</span>
+          <span class="px">Header</span>
         </div>
-
-        <div class="size-item">
-          <div class="logo">
-            <svg width="48" height="48" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-                    fill="currentColor" opacity="0.15" transform="rotate(-18, 18, 18)" />
-              <path d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-                    fill="currentColor" opacity="0.40" transform="rotate(18, 18, 18)" />
-              <circle cx="18" cy="17" r="2.6" fill="currentColor" />
-            </svg>
-          </div>
-          <span class="size-label">Mark only (md)</span>
+        <div class="col">
+          <svg width="48" height="48" viewBox="0 0 36 36" fill="none" style="color:var(--primary)">
+            <path d="M 18 27 C 16 21, 9 14, 5 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity="0.85"/>
+            <path d="M 18 27 C 21 21, 27 15, 31 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.42"/>
+            <circle cx="18" cy="29" r="2.5" fill="currentColor"/>
+          </svg>
+          <span class="px">48px</span>
         </div>
-
-        <div class="size-item">
-          <div class="logo">
-            <svg width="64" height="64" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-                    fill="currentColor" opacity="0.15" transform="rotate(-18, 18, 18)" />
-              <path d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-                    fill="currentColor" opacity="0.40" transform="rotate(18, 18, 18)" />
-              <circle cx="18" cy="17" r="2.6" fill="currentColor" />
-            </svg>
-          </div>
-          <span class="size-label">Mark only (lg)</span>
+        <div class="col">
+          <svg width="72" height="72" viewBox="0 0 36 36" fill="none" style="color:var(--primary)">
+            <path d="M 18 27 C 16 21, 9 14, 5 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity="0.85"/>
+            <path d="M 18 27 C 21 21, 27 15, 31 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.42"/>
+            <circle cx="18" cy="29" r="2.5" fill="currentColor"/>
+          </svg>
+          <span class="px">72px</span>
         </div>
-
-        <div class="size-item">
-          <div class="logo">
-            <svg width="16" height="16" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-                    fill="currentColor" opacity="0.15" transform="rotate(-18, 18, 18)" />
-              <path d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-                    fill="currentColor" opacity="0.40" transform="rotate(18, 18, 18)" />
-              <circle cx="18" cy="17" r="2.6" fill="currentColor" />
-            </svg>
-          </div>
-          <span class="size-label">Favicon</span>
+        <div class="col">
+          <svg width="16" height="16" viewBox="0 0 36 36" fill="none" style="color:var(--primary)">
+            <path d="M 18 27 C 16 21, 9 14, 5 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity="0.85"/>
+            <path d="M 18 27 C 21 21, 27 15, 31 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.42"/>
+            <circle cx="18" cy="29" r="2.5" fill="currentColor"/>
+          </svg>
+          <span class="px">Favicon</span>
         </div>
-
       </div>
     </div>
   </div>
 
-  <!-- SAGE BACKGROUND -->
+  <!-- Sage -->
   <div>
-    <h2>Sage — brand background (#e8ede8)</h2>
+    <p class="label">Sage — #e8ede8</p>
     <div class="card sage">
       <div class="logo">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-                fill="currentColor" opacity="0.15" transform="rotate(-18, 18, 18)" />
-          <path d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-                fill="currentColor" opacity="0.40" transform="rotate(18, 18, 18)" />
-          <circle cx="18" cy="17" r="2.6" fill="currentColor" />
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <path d="M 18 27 C 16 21, 9 14, 5 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity="0.85"/>
+          <path d="M 18 27 C 21 21, 27 15, 31 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.42"/>
+          <circle cx="18" cy="29" r="2.5" fill="currentColor"/>
         </svg>
-        <div class="logo-text">
-          <span class="logo-name">Interior Espacio</span>
-          <span class="logo-sub">Terapia en Línea</span>
+        <div>
+          <div class="name">Espacio Interior</div>
+          <div class="sub">Terapia en Línea</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- DARK BACKGROUND -->
+  <!-- Dark -->
   <div>
-    <h2>Dark — ContactCTA / night mode (#1c2320)</h2>
+    <p class="label">Dark — #1c2320</p>
     <div class="card dark">
-      <div class="logo dark-text">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-                fill="currentColor" opacity="0.15" transform="rotate(-18, 18, 18)" />
-          <path d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-                fill="currentColor" opacity="0.40" transform="rotate(18, 18, 18)" />
-          <circle cx="18" cy="17" r="2.6" fill="currentColor" />
+      <div class="logo inv">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <path d="M 18 27 C 16 21, 9 14, 5 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity="0.85"/>
+          <path d="M 18 27 C 21 21, 27 15, 31 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.42"/>
+          <circle cx="18" cy="29" r="2.5" fill="currentColor"/>
         </svg>
-        <div class="logo-text">
-          <span class="logo-name">Interior Espacio</span>
-          <span class="logo-sub">Terapia en Línea</span>
+        <div>
+          <div class="name">Espacio Interior</div>
+          <div class="sub">Terapia en Línea</div>
         </div>
       </div>
     </div>

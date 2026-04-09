@@ -1,4 +1,4 @@
-# Social Media Integration — Interior Espacio
+# Social Media Integration — Espacio Interior
 
 ## Context
 
@@ -51,7 +51,7 @@ interface SocialLinksProps {
 - Each link: `text-text-muted hover:text-primary transition-colors duration-150`
 - `target="_blank" rel="noopener noreferrer"` on external links
 - WhatsApp opens `https://wa.me/{number}` format
-- Each icon wrapped with `aria-label` (e.g., `"Instagram de Interior Espacio"`)
+- Each icon wrapped with `aria-label` (e.g., `"Instagram de Espacio Interior"`)
 - Skip rendering links where the URL is an empty string placeholder
 
 ### 3. `app/opengraph-image.tsx`

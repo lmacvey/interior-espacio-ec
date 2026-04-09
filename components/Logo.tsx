@@ -8,11 +8,22 @@ export default function Logo({ size = "sm", className = "" }: LogoProps) {
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       {/*
-        Mark concept: "El Espacio Interior"
-        Two organic leaf/petal forms counter-rotated around a shared center.
-        Their overlapping interior creates a visible inner space — the core
-        of the therapeutic journey. The center point is the self (el yo).
-        Uses currentColor so the mark inverts cleanly on dark backgrounds.
+        Mark concept: "EI" monogram — Espacio Interior.
+
+        E: a vertical spine with three horizontal bars (left side of mark).
+           Top and bottom bars equal length; middle bar slightly longer —
+           standard E proportion, read immediately as the letter.
+
+        I: a filled circle aligned to the middle bar (right side of mark).
+           The lowercase "i" dot, abstracted. Not a stroke — a presence.
+
+        The gap between the E's bar ends and the I dot is the espacio interior:
+        the space between the two letters IS the concept.
+
+        Bar opacities: top/bottom 0.55, middle 0.90 — draws the eye to center,
+        creates depth within the E without adding elements.
+
+        All strokes and fills use currentColor.
       */}
       <svg
         width="36"
@@ -22,27 +33,47 @@ export default function Logo({ size = "sm", className = "" }: LogoProps) {
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
-        {/* Outer petal — tilted left, represents the outer world / context */}
-        <path
-          d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-          fill="currentColor"
-          opacity="0.15"
-          transform="rotate(-18, 18, 18)"
+        {/* E — vertical spine */}
+        <line
+          x1="9" y1="8" x2="9" y2="28"
+          stroke="currentColor"
+          strokeWidth="2.4"
+          strokeLinecap="round"
         />
-        {/* Inner petal — tilted right, represents the inner self */}
-        <path
-          d="M 18 4 C 6 9 6 27 18 32 C 30 27 30 9 18 4 Z"
-          fill="currentColor"
-          opacity="0.40"
-          transform="rotate(18, 18, 18)"
+
+        {/* E — top bar */}
+        <line
+          x1="9" y1="8" x2="21" y2="8"
+          stroke="currentColor"
+          strokeWidth="2.0"
+          strokeLinecap="round"
+          opacity="0.55"
         />
-        {/* Centro — el yo / the self */}
-        <circle cx="18" cy="17" r="2.6" fill="currentColor" />
+
+        {/* E — middle bar (longest — classic E proportion) */}
+        <line
+          x1="9" y1="18" x2="23" y2="18"
+          stroke="currentColor"
+          strokeWidth="2.0"
+          strokeLinecap="round"
+        />
+
+        {/* E — bottom bar */}
+        <line
+          x1="9" y1="28" x2="21" y2="28"
+          stroke="currentColor"
+          strokeWidth="2.0"
+          strokeLinecap="round"
+          opacity="0.55"
+        />
+
+        {/* I — the dot, aligned to middle bar. The interior space between E and I. */}
+        <circle cx="30" cy="18" r="2.8" fill="currentColor" />
       </svg>
 
       <span className="flex flex-col leading-none">
         <span className="font-display text-xl font-semibold tracking-tight">
-          Interior Espacio
+          Espacio Interior
         </span>
         {size === "md" && (
           <span className="font-sans text-xs text-muted-foreground tracking-widest uppercase mt-0.5">

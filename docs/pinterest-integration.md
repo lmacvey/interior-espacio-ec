@@ -1,4 +1,4 @@
-# Pinterest Integration — Interior Espacio
+# Pinterest Integration — Espacio Interior
 
 ## Context
 
@@ -68,7 +68,7 @@ Next.js metadata file — auto-served at `/opengraph-image`. Use `ImageResponse`
 
 - `size`: `{ width: 1200, height: 630 }`
 - `contentType`: `"image/png"`
-- Design: full-bleed `#5f7260` (primary sage) background, centered white "Interior Espacio" in large system serif, tagline in `#d4e0d4` (primary-light) below it
+- Design: full-bleed `#5f7260` (primary sage) background, centered white "Espacio Interior" in large system serif, tagline in `#d4e0d4` (primary-light) below it
 - Use inline styles only (no Tailwind, no CSS vars — `ImageResponse` runs in Edge runtime)
 
 When `app/opengraph-image.tsx` exists, Next.js also automatically injects the `og:image` meta tag — the explicit `images` array in Step 2 provides `width`/`height`/`alt` attributes.
@@ -113,7 +113,7 @@ A `platforms` array drives rendering — each entry has a `key` (matches a `SOCI
 ```ts
 {
   key: "pinterest" as const,
-  label: "Pinterest de Interior Espacio",
+  label: "Pinterest de Espacio Interior",
   Icon: PinterestIcon,
   href: (v: string) => v,
 },

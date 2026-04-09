@@ -2,7 +2,7 @@
 
 ## Context
 
-Interior Espacio serves Spanish-speaking clients in Ecuador where WhatsApp is the dominant communication channel. Adding click-to-chat entry points throughout the site lowers friction for prospective clients to reach the therapist directly. No API key or Meta Business account needed — just a phone number in the env file.
+Espacio Interior serves Spanish-speaking clients in Ecuador where WhatsApp is the dominant communication channel. Adding click-to-chat entry points throughout the site lowers friction for prospective clients to reach the therapist directly. No API key or Meta Business account needed — just a phone number in the env file.
 
 ---
 
@@ -48,7 +48,7 @@ export const WHATSAPP_NUMBER =
   process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "593XXXXXXXXX";
 
 export const WHATSAPP_PREFILLED_MESSAGE = encodeURIComponent(
-  "Hola, me gustaría agendar una consulta de exploración gratuita con Interior Espacio."
+  "Hola, me gustaría agendar una consulta de exploración gratuita con Espacio Interior."
 );
 ```
 

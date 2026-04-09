@@ -1,4 +1,4 @@
-# Facebook Integration Plan — Interior Espacio
+# Facebook Integration Plan — Espacio Interior
 
 ## Context
 

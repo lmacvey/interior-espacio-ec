@@ -3,7 +3,7 @@
 /**
  * NavIcons — Custom Icon Registry
  *
- * Central registry for Interior Espacio's bespoke SVG icon set. All icons
+ * Central registry for Espacio Interior's bespoke SVG icon set. All icons
  * are custom-drawn to match the logo's design language: organic bezier curves,
  * layered opacity, currentColor, strokeWidth 1.5, rounded linecaps.
  *

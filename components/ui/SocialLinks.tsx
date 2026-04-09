@@ -15,32 +15,32 @@ interface SocialLinksProps {
 const platforms = [
   {
     key: "instagram" as const,
-    label: "Instagram de Interior Espacio",
+    label: "Instagram de Espacio Interior",
     Icon: InstagramIcon,
     href: (v: string) => v,
   },
   {
     key: "facebook" as const,
-    label: "Facebook de Interior Espacio",
+    label: "Facebook de Espacio Interior",
     Icon: FacebookIcon,
     href: (v: string) => v,
   },
   {
     key: "linkedin" as const,
-    label: "LinkedIn de Interior Espacio",
+    label: "LinkedIn de Espacio Interior",
     Icon: LinkedInIcon,
     href: (v: string) => v,
   },
   {
     key: "whatsapp" as const,
-    label: "WhatsApp de Interior Espacio",
+    label: "WhatsApp de Espacio Interior",
     Icon: WhatsAppIcon,
     href: (v: string) =>
       `https://wa.me/${v}?text=${WHATSAPP_PREFILLED_MESSAGE}`,
   },
   {
     key: "pinterest" as const,
-    label: "Pinterest de Interior Espacio",
+    label: "Pinterest de Espacio Interior",
     Icon: PinterestIcon,
     href: (v: string) => v,
   },

@@ -1,4 +1,4 @@
-# Interior Espacio — Custom Navigation Icon Set
+# Espacio Interior — Custom Navigation Icon Set
 
 ## Context
 
