@@ -9,6 +9,15 @@ export const WHATSAPP_PREFILLED_MESSAGE = encodeURIComponent(
   "Hola, me gustaría agendar una consulta de exploración gratuita con Espacio Interior."
 );
 
+// Substack — RSS uses the subdomain; subscribe link uses the handle
+export const SUBSTACK_RSS_URL = process.env.SUBSTACK_PUBLICATION
+  ? `https://${process.env.SUBSTACK_PUBLICATION}.substack.com/feed`
+  : "";
+export const SUBSTACK_HANDLE = process.env.NEXT_PUBLIC_SUBSTACK_HANDLE ?? "";
+export const SUBSTACK_URL = SUBSTACK_HANDLE
+  ? `https://substack.com/@${SUBSTACK_HANDLE}`
+  : "";
+
 export const SOCIAL_LINKS = {
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "",
   facebook:  process.env.NEXT_PUBLIC_FACEBOOK_URL  ?? "",

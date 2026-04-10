@@ -10,6 +10,8 @@ export type PostMeta = {
   date: string; // ISO date string
   excerpt: string;
   published: boolean;
+  source?: "local" | "substack";
+  url?: string; // canonical URL — only set for substack posts
 };
 
 export type Post = {

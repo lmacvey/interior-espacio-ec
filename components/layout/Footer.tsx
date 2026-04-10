@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import { SocialLinks } from "@/components/ui/SocialLinks";
+import { SubstackSubscribeWidget } from "@/components/blog/SubstackSubscribeWidget";
 
 export default function Footer() {
   return (
@@ -53,6 +54,7 @@ export default function Footer() {
           >
             Agenda una sesión
           </Link>
+          <SubstackSubscribeWidget variant="footer" />
         </div>
       </div>
 

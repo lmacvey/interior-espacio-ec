@@ -1,0 +1,36 @@
+# Copy this file to terraform.tfvars and fill in real values.
+# terraform.tfvars is git-ignored — never commit it.
+
+aws_region = "us-east-1"
+
+# GitHub
+github_token      = "ghp_xxxxxxxxxxxxxxxxxxxx"
+github_repository = "https://github.com/your-org/interior-espacio-ec"
+github_branch     = "main"
+
+# Domain
+domain_name          = "espaciointerior.ec"
+enable_www_subdomain = true
+
+# Site URLs
+next_public_site_url = "https://www.espaciointerior.ec"
+
+# Email
+contact_email  = "grace@espaciointerior.ec"
+ses_from_email = "contacto@espaciointerior.ec"
+
+# Facebook
+facebook_access_token = "EAAxxxxxxxxxxxx"
+facebook_page_id      = "123456789"
+
+# Admin
+admin_passphrase = "choose-a-strong-passphrase"
+
+# Next.js encryption key — generate with: openssl rand -base64 32
+next_server_actions_encryption_key = "base64-encoded-32-byte-secret"
+
+# Social links (public)
+instagram_url   = "https://www.instagram.com/espaciointerior.ec"
+facebook_url    = "https://www.facebook.com/espaciointerior.ec"
+linkedin_url    = ""
+whatsapp_number = "593XXXXXXXXX"

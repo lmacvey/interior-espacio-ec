@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1028.0",
+    "@aws-sdk/lib-dynamodb": "^3.1028.0",
     "@hookform/resolvers": "^3.0.0",
     "@radix-ui/react-accordion": "^1.0.0",
     "@radix-ui/react-dialog": "^1.0.0",
@@ -16,6 +18,7 @@
     "@radix-ui/react-navigation-menu": "^1.0.0",
     "@radix-ui/react-slot": "^1.0.0",
     "clsx": "^2.0.0",
+    "fast-xml-parser": "^5.5.11",
     "framer-motion": "^11.0.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.400.0",
