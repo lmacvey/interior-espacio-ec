@@ -24,7 +24,7 @@ export default function Hero() {
             <span className="inline-block rounded-full border border-primary-light bg-primary-muted px-4 py-1.5 text-xs font-medium text-primary tracking-wide">
               Acompañamiento psicológico online
             </span>
-            <span className="inline-block rounded-full border border-border bg-surface-2 px-4 py-1.5 text-xs font-medium text-text-secondary tracking-wide">
+            <span className="inline-block rounded-full border border-secondary-light bg-secondary-light px-4 py-1.5 text-xs font-medium text-accent tracking-wide">
               Español · Inglés
             </span>
           </motion.div>
@@ -81,7 +81,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/services"
-              className="rounded-full border-[1.5px] border-border px-7 py-3.5 text-center text-sm font-medium text-foreground transition-colors duration-200 hover:bg-surface-2 hover:border-border-strong"
+              className="rounded-full border-[1.5px] border-border-strong px-7 py-3.5 text-center text-sm font-medium text-foreground transition-colors duration-200 hover:bg-surface-2 hover:border-border-strong"
             >
               Conoce los servicios →
             </Link>
@@ -111,14 +111,14 @@ export default function Hero() {
           </svg>
 
           {/* Photo */}
-          <div className="relative w-full max-w-sm aspect-square rounded-3xl overflow-hidden">
+          <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden">
             <Image
               src="/hero-office.jpeg"
               alt="Espacio de consulta cálido con sillones y luz natural"
               fill
               priority
               loading="eager"
-              sizes="(max-width: 768px) 100vw, 384px"
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
 

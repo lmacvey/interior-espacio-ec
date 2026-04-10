@@ -94,10 +94,9 @@ Terraform needs an IAM user with programmatic access (access key) to provision a
       "Resource": "*"
     },
     {
-      "Sid": "EventBridgeScheduler",
+      "Sid": "EventBridge",
       "Effect": "Allow",
       "Action": [
-        "scheduler:*",
         "events:CreateConnection",
         "events:DeleteConnection",
         "events:UpdateConnection",
@@ -107,7 +106,15 @@ Terraform needs an IAM user with programmatic access (access key) to provision a
         "events:DeleteApiDestination",
         "events:UpdateApiDestination",
         "events:DescribeApiDestination",
-        "events:ListApiDestinations"
+        "events:ListApiDestinations",
+        "events:PutRule",
+        "events:DeleteRule",
+        "events:DescribeRule",
+        "events:EnableRule",
+        "events:DisableRule",
+        "events:PutTargets",
+        "events:RemoveTargets",
+        "events:ListTargetsByRule"
       ],
       "Resource": "*"
     },
@@ -277,7 +284,7 @@ await resend.emails.send({ from, to, subject, html })
 
 // After (Amazon SES)
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses'
-const ses = new SESClient({ region: process.env.AWS_REGION })
+const ses = new SESClient({ region: process.env.SES_REGION })
 await ses.send(new SendEmailCommand({
   Source: process.env.SES_FROM_EMAIL,
   Destination: { ToAddresses: [process.env.CONTACT_EMAIL!] },
@@ -345,14 +352,13 @@ Set in **Amplify Console → App settings → Environment variables**. Mark sens
 | Variable | Notes |
 |---|---|
 | `NEXT_PUBLIC_SITE_URL` | e.g., `https://www.espaciointerior.ec` |
-| `AWS_REGION` | e.g., `us-east-1` — region where SES is configured |
+| `SES_REGION` | e.g., `us-east-1` — region where SES is configured |
 | `AWS_ACCESS_KEY_ID` | Secret — IAM user with `ses:SendEmail` only |
 | `AWS_SECRET_ACCESS_KEY` | Secret |
 | `SES_FROM_EMAIL` | Verified SES sender, e.g., `contacto@espaciointerior.ec` |
 | `CONTACT_EMAIL` | Therapist's receiving address |
 | `FACEBOOK_ACCESS_TOKEN` | Secret |
 | `FACEBOOK_PAGE_ID` | |
-| `ADMIN_PASSPHRASE` | Secret |
 | `NEXT_PUBLIC_INSTAGRAM_URL` | |
 | `NEXT_PUBLIC_FACEBOOK_URL` | |
 | `NEXT_PUBLIC_LINKEDIN_URL` | |

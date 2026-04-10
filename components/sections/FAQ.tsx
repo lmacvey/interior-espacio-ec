@@ -41,7 +41,7 @@ export default function FAQ() {
     <section className="py-24 px-4 md:px-6 bg-surface-1">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-10">
-          <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-text-muted mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-text-secondary mb-3">
             FAQ
           </p>
           <h2
@@ -60,19 +60,19 @@ export default function FAQ() {
             <Accordion.Item
               key={index}
               value={`item-${index}`}
-              className="rounded-xl border border-border bg-background overflow-hidden"
+              className="rounded-xl border border-border-strong bg-background overflow-hidden"
             >
               <Accordion.Header>
-                <Accordion.Trigger className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-medium text-text-primary hover:bg-surface-1 transition-colors duration-150 group">
+                <Accordion.Trigger className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-medium text-text-primary hover:bg-primary-muted data-[state=open]:text-primary data-[state=open]:bg-primary-muted transition-colors duration-150 group">
                   <span>{faq.question}</span>
                   <ChevronDown
-                    className="flex-shrink-0 w-4 h-4 text-text-muted transition-transform duration-200 group-data-[state=open]:rotate-180"
+                    className="flex-shrink-0 w-4 h-4 text-text-muted group-data-[state=open]:text-primary transition-transform duration-200 group-data-[state=open]:rotate-180"
                     strokeWidth={1.5}
                   />
                 </Accordion.Trigger>
               </Accordion.Header>
               <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                <p className="px-5 pb-4 text-sm text-text-secondary" style={{ lineHeight: "var(--leading-body)" }}>
+                <p className="px-5 pb-4 pt-1 text-sm text-text-secondary border-t border-border-subtle" style={{ lineHeight: "var(--leading-body)" }}>
                   {faq.answer}
                 </p>
               </Accordion.Content>

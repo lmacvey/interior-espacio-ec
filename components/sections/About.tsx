@@ -16,9 +16,9 @@ export default function About() {
           initial={shouldReduceMotion ? "visible" : "hidden"}
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="rounded-2xl bg-border aspect-[4/3] flex items-center justify-center"
+          className="rounded-2xl bg-secondary-light aspect-[4/3] flex items-center justify-center"
         >
-          <span className="text-xs text-text-muted select-none">
+          <span className="text-xs text-secondary select-none">
             Foto de Grace P. Pacheco
           </span>
         </motion.div>
@@ -31,7 +31,7 @@ export default function About() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ ...transitions.gentle, delay: 0.15 }}
         >
-          <p className="text-xs font-medium uppercase tracking-[0.1em] text-text-muted mb-3">
+          <p className="text-xs font-medium uppercase tracking-[0.1em] text-text-secondary mb-3">
             Sobre mí
           </p>
           <h2
@@ -40,9 +40,9 @@ export default function About() {
           >
             Un acompañamiento <span className="text-primary">desde adentro.</span>
           </h2>
-          <p className="text-sm text-text-muted mb-5 font-medium">
-            Grace P. Pacheco{" "}
-            <span className="font-normal">| Psicóloga Clínica (USFQ)</span>
+          <p className="text-sm mb-5 font-medium">
+            <span className="text-accent">Grace P. Pacheco</span>{" "}
+            <span className="font-normal text-text-muted">| Psicóloga Clínica (USFQ)</span>
           </p>
           <p className="text-text-secondary mb-4" style={{ lineHeight: "var(--leading-body)" }}>
             Soy Grace, psicóloga clínica graduada de la USFQ. Me especializo en

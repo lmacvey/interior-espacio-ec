@@ -9,18 +9,27 @@ const steps = [
     title: "Escríbeme",
     description:
       "Llena el formulario de contacto o envíame un mensaje. Cuéntame un poco de lo que estás viviendo.",
+    circleBg: "bg-background",
+    circleBorder: "border-primary-light",
+    circleText: "text-primary",
   },
   {
     number: "02",
     title: "Sesión de exploración gratuita",
     description:
       "Nos conectamos 15 minutos para conocernos, resolver dudas y ver si hay sintonía. Sin compromiso.",
+    circleBg: "bg-background",
+    circleBorder: "border-secondary-light",
+    circleText: "text-secondary",
   },
   {
     number: "03",
     title: "Comenzamos",
     description:
       "Si decidimos trabajar juntos, agendamos las sesiones regulares en línea a tu propio ritmo.",
+    circleBg: "bg-background",
+    circleBorder: "border-accent-light",
+    circleText: "text-accent",
   },
 ];
 
@@ -32,7 +41,7 @@ export default function Process() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-text-muted mb-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-text-secondary mb-3">
             El proceso
           </p>
           <h2
@@ -59,14 +68,13 @@ export default function Process() {
               {/* Connector line between steps on desktop */}
               {index < steps.length - 1 && (
                 <div
-                  className="hidden md:block absolute top-7 left-[calc(100%_-_12px)] w-full h-px bg-border z-0"
+                  className="hidden md:block absolute top-7 left-[calc(100%_-_12px)] w-full h-px bg-border-strong z-0"
                   aria-hidden="true"
                 />
               )}
 
               <div className="relative z-10 flex items-start gap-4 md:flex-col md:gap-4">
-                {/* Step circle — using named tokens, no opacity modifiers */}
-                <span className="flex-shrink-0 w-14 h-14 rounded-full bg-background border-2 border-primary-light flex items-center justify-center font-display text-lg font-semibold text-primary">
+                <span className={`flex-shrink-0 w-14 h-14 rounded-full ${step.circleBg} border-2 ${step.circleBorder} flex items-center justify-center font-display text-lg font-semibold ${step.circleText}`}>
                   {step.number}
                 </span>
 

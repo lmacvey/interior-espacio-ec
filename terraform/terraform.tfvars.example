@@ -23,9 +23,6 @@ ses_from_email = "contacto@espaciointerior.ec"
 facebook_access_token = "EAAxxxxxxxxxxxx"
 facebook_page_id      = "123456789"
 
-# Admin
-admin_passphrase = "choose-a-strong-passphrase"
-
 # Next.js encryption key — generate with: openssl rand -base64 32
 next_server_actions_encryption_key = "base64-encoded-32-byte-secret"
 

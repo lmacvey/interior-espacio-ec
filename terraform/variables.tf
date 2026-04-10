@@ -64,11 +64,6 @@ variable "facebook_page_id" {
   type        = string
 }
 
-variable "admin_passphrase" {
-  description = "Passphrase for the /admin panel"
-  type        = string
-  sensitive   = true
-}
 
 variable "next_server_actions_encryption_key" {
   description = "32-byte base64 secret for Next.js Server Actions encryption across Lambda instances. Generate with: openssl rand -base64 32"

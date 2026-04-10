@@ -36,7 +36,7 @@ resource "aws_amplify_app" "site" {
     NEXT_PUBLIC_FACEBOOK_URL  = var.facebook_url
     NEXT_PUBLIC_LINKEDIN_URL  = var.linkedin_url
     NEXT_PUBLIC_WHATSAPP_NUMBER = var.whatsapp_number
-    AWS_REGION            = var.aws_region
+    SES_REGION            = var.aws_region
 
     # SES IAM credentials — populated after IAM resource is created
     # These reference the IAM access key outputs defined in iam.tf
@@ -46,8 +46,7 @@ resource "aws_amplify_app" "site" {
     # Sensitive — Amplify stores these but does not expose them in the console
     FACEBOOK_ACCESS_TOKEN                  = var.facebook_access_token
     FACEBOOK_PAGE_ACCESS_TOKEN             = var.facebook_access_token
-    ADMIN_PASSPHRASE                       = var.admin_passphrase
-    NEXT_SERVER_ACTIONS_ENCRYPTION_KEY     = var.next_server_actions_encryption_key
+NEXT_SERVER_ACTIONS_ENCRYPTION_KEY     = var.next_server_actions_encryption_key
 
     # Substack → Facebook automation
     CRON_SECRET                = var.cron_secret

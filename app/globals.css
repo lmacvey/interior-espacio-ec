@@ -49,6 +49,8 @@
   --ring:                 #6E7C5C;   /* = primary */
   --ring-offset:          #F2E7D3;   /* = background */
   --overlay:              rgba(74, 71, 69, 0.5);
+  --primary-overlay:      rgba(110, 124, 92, 0.84);  /* ContactCTA bg — avoids opacity modifier */
+  --text-inverse-muted:   rgba(242, 231, 211, 0.80); /* subtext on primary bg */
 
   /* ── Shadows — warm-toned, visible depth ── */
   --shadow-xs: 0 1px 3px rgba(74,71,69,0.10);
@@ -136,6 +138,8 @@
   --color-ring:                 var(--ring);
   --color-muted:                var(--muted);
   --color-muted-foreground:     var(--muted-foreground);
+  --color-primary-overlay:      var(--primary-overlay);
+  --color-text-inverse-muted:   var(--text-inverse-muted);
   --font-sans:    var(--font-inter);
   --font-display: var(--font-playfair);
 }

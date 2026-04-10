@@ -25,7 +25,7 @@ export default function ContactCTA() {
         aria-hidden="true"
       />
       {/* Sage overlay */}
-      <div className="absolute inset-0 bg-primary/80" aria-hidden="true" />
+      <div className="absolute inset-0 bg-primary-overlay" aria-hidden="true" />
       <motion.div
         variants={scaleIn}
         initial={shouldReduceMotion ? "visible" : "hidden"}
@@ -43,7 +43,7 @@ export default function ContactCTA() {
           ¿Lista/o para comenzar?
         </h2>
         <p
-          className="text-primary-foreground/80 text-base md:text-lg mb-10"
+          className="text-text-inverse-muted text-base md:text-lg mb-10"
           style={{ lineHeight: "var(--leading-relaxed)" }}
         >
           Una sesión gratuita de exploración, sin compromiso. Un espacio para

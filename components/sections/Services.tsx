@@ -15,6 +15,9 @@ const services = [
       "Maternidad, paternidad o nido vacío",
       "Pérdidas, duelos y separaciones",
     ],
+    iconBg: "bg-primary-light",
+    iconColor: "text-primary",
+    dot: "bg-primary",
   },
   {
     icon: Compass,
@@ -25,6 +28,9 @@ const services = [
       "Cuestionamiento de creencias",
       "Sensación de estar estancado/a",
     ],
+    iconBg: "bg-secondary-light",
+    iconColor: "text-accent",
+    dot: "bg-secondary",
   },
   {
     icon: Heart,
@@ -35,6 +41,9 @@ const services = [
       "Sensación de vacío o desconexión",
       "Estrés o sobrecarga emocional",
     ],
+    iconBg: "bg-accent-light",
+    iconColor: "text-accent",
+    dot: "bg-accent",
   },
   {
     icon: Users,
@@ -45,6 +54,9 @@ const services = [
       "Patrones repetitivos en relaciones",
       "Necesidad de establecer límites",
     ],
+    iconBg: "bg-primary-light",
+    iconColor: "text-primary",
+    dot: "bg-primary",
   },
 ];
 
@@ -55,8 +67,7 @@ export default function Services() {
     <section className="py-24 px-4 md:px-6 max-w-6xl mx-auto">
       {/* Section header */}
       <div className="text-center mb-12">
-        {/* Overline */}
-        <p className="font-sans text-[11px] font-medium uppercase tracking-[0.1em] text-text-muted mb-3">
+        <p className="font-sans text-[11px] font-medium uppercase tracking-[0.1em] text-text-secondary mb-3">
           Áreas de acompañamiento
         </p>
         <h2 className="font-display text-2xl sm:text-3xl md:text-4xl mb-3">
@@ -83,12 +94,11 @@ export default function Services() {
               key={service.title}
               variants={fadeUp}
               whileHover={shouldReduceMotion ? {} : { y: -3 }}
-              className="rounded-[--radius-xl] border border-border bg-background p-6 flex flex-col gap-4 hover:shadow-[var(--shadow-md)] transition-shadow duration-200"
+              className="rounded-[--radius-xl] border border-border-strong bg-background p-6 flex flex-col gap-4 hover:shadow-[var(--shadow-md)] transition-shadow duration-200"
             >
               <div className="flex items-center gap-3">
-                {/* Square icon container — radius-md per spec */}
-                <span className="flex-shrink-0 w-10 h-10 rounded-[--radius-md] bg-primary-light flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
+                <span className={`flex-shrink-0 w-10 h-10 rounded-[--radius-md] ${service.iconBg} flex items-center justify-center`}>
+                  <Icon className={`w-5 h-5 ${service.iconColor}`} strokeWidth={1.5} />
                 </span>
                 <h3 className="font-semibold text-sm leading-snug text-text-primary">
                   {service.title}
@@ -100,7 +110,7 @@ export default function Services() {
                     key={item}
                     className="flex items-start gap-2 text-sm text-text-secondary"
                   >
-                    <span className="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-primary" />
+                    <span className={`mt-1.5 flex-shrink-0 w-1 h-1 rounded-full ${service.dot}`} />
                     {item}
                   </li>
                 ))}
@@ -111,7 +121,7 @@ export default function Services() {
       </motion.div>
 
       {/* Closing invitation quote */}
-      <blockquote className="mt-12 text-center font-display italic text-text-muted max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+      <blockquote className="mt-12 text-center font-display italic text-secondary max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
         &ldquo;No necesitas tener todo claro para comenzar. A veces, solo basta
         con sentir que algo quiere ser comprendido.&rdquo;
       </blockquote>

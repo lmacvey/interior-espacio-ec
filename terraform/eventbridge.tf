@@ -1,4 +1,4 @@
-# IAM role that allows EventBridge Scheduler to invoke the API Destination
+# IAM role that allows EventBridge to invoke the API Destination
 resource "aws_iam_role" "eventbridge_scheduler" {
   name = "interior-espacio-eventbridge-scheduler"
 
@@ -7,7 +7,7 @@ resource "aws_iam_role" "eventbridge_scheduler" {
     Statement = [
       {
         Effect    = "Allow"
-        Principal = { Service = "scheduler.amazonaws.com" }
+        Principal = { Service = "events.amazonaws.com" }
         Action    = "sts:AssumeRole"
       }
     ]
@@ -28,13 +28,13 @@ resource "aws_iam_role_policy" "eventbridge_scheduler_invoke" {
       {
         Effect   = "Allow"
         Action   = ["events:InvokeApiDestination"]
-        Resource = [aws_cloudwatch_event_api_destination.substack_sync.arn]
+        Resource = ["arn:aws:events:${var.aws_region}:*:api-destination/*"]
       }
     ]
   })
 }
 
-# Connection — stores the X-Cron-Secret header credential
+# Connection — stores the X-Cron-Secret header credential in Secrets Manager
 resource "aws_cloudwatch_event_connection" "substack_sync" {
   name               = "interior-espacio-cron-secret"
   authorization_type = "API_KEY"
@@ -56,34 +56,21 @@ resource "aws_cloudwatch_event_api_destination" "substack_sync" {
   invocation_rate_limit_per_second = 1
 }
 
-# Schedule group
-resource "aws_scheduler_schedule_group" "app" {
-  name = "interior-espacio"
+# Hourly EventBridge rule (classic rules work natively with API Destinations)
+resource "aws_cloudwatch_event_rule" "substack_sync_hourly" {
+  name                = "interior-espacio-substack-sync-hourly"
+  description         = "Trigger Substack → Facebook sync every hour"
+  schedule_expression = "rate(1 hour)"
+  state               = "ENABLED"
 
   tags = {
     app = "interior-espacio-ec"
   }
 }
 
-# Hourly schedule — fires every hour, no flexible window
-resource "aws_scheduler_schedule" "substack_sync" {
-  name       = "substack-facebook-sync"
-  group_name = aws_scheduler_schedule_group.app.name
-
-  flexible_time_window {
-    mode = "OFF"
-  }
-
-  schedule_expression = "rate(1 hour)"
-
-  target {
-    arn      = aws_cloudwatch_event_api_destination.substack_sync.arn
-    role_arn = aws_iam_role.eventbridge_scheduler.arn
-
-    input = "{}"
-
-    retry_policy {
-      maximum_retry_attempts = 2
-    }
-  }
+resource "aws_cloudwatch_event_target" "substack_sync" {
+  rule      = aws_cloudwatch_event_rule.substack_sync_hourly.name
+  target_id = "SubstackSyncApiDestination"
+  arn       = aws_cloudwatch_event_api_destination.substack_sync.arn
+  role_arn  = aws_iam_role.eventbridge_scheduler.arn
 }
