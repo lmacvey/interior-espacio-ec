@@ -14,10 +14,10 @@
   --text-inverse:         #F2E7D3;   /* linen cream — on dark/primary backgrounds */
 
   /* ── Primary: Sage Green ── */
-  --primary:              #6E7C5C;   /* client: sage green — therapeutic trust */
-  --primary-hover:        #586748;   /* derived: 15% darker sage */
-  --primary-light:        #B8C8A8;   /* derived: light sage — icon containers, pill tags */
-  --primary-muted:        #D8E3CE;   /* derived: very light sage — hero blob, section tints */
+  --primary:              #5E7A48;   /* shifted: more vivid sage — fresher, matches photo plants */
+  --primary-hover:        #4E6A3A;   /* derived: 15% darker */
+  --primary-light:        #A8C090;   /* derived: light sage — icon containers, pill tags */
+  --primary-muted:        #D0E0C0;   /* derived: very light sage — section tints */
   --primary-foreground:   #ffffff;   /* white on sage — best WCAG (4.5:1) */
 
   /* ── Secondary: Cognac ── */
@@ -26,16 +26,22 @@
   --secondary-light:      #D4A87A;   /* derived: light cognac tint */
   --secondary-foreground: #ffffff;   /* white on cognac — passes AA */
 
-  /* ── Accent: Espresso ── */
-  --accent:               #6B4428;   /* client: espresso — depth, decorative borders */
-  --accent-hover:         #573620;   /* derived: deeper espresso */
-  --accent-light:         #C09878;   /* derived: medium warm brown */
-  --accent-foreground:    #F2E7D3;   /* linen cream on dark espresso */
+  /* ── Accent: Terracotta ── */
+  --accent:               #B86030;   /* photo pillow — warm terracotta, replaces espresso */
+  --accent-hover:         #9A5028;   /* derived: deeper terracotta */
+  --accent-light:         #E8C0A0;   /* derived: light terracotta tint */
+  --accent-foreground:    #ffffff;   /* white on terracotta — passes AA */
 
   /* ── Borders ── */
   --border:               #C4B09C;   /* derived: warm tan — visible on linen bg */
   --border-strong:        #A89078;   /* derived: darker for focused inputs */
   --border-subtle:        #D7C5AE;   /* = surface-1 — hairlines, soft dividers */
+
+  /* ── Warm: Amber/Honey ── */
+  --warm:                 #C88820;   /* photo lamp — golden warmth, decorative highlights */
+  --warm-hover:           #A87010;   /* derived: deeper amber */
+  --warm-light:           #F0D890;   /* derived: soft amber tint */
+  --warm-foreground:      #4A4745;   /* charcoal on amber — passes AA */
 
   /* ── Semantic ── */
   --success:              #4a7c59;
@@ -46,10 +52,10 @@
   --destructive-light:    #fde8e6;
 
   /* ── Interaction ── */
-  --ring:                 #6E7C5C;   /* = primary */
+  --ring:                 #5E7A48;   /* = primary */
   --ring-offset:          #F2E7D3;   /* = background */
   --overlay:              rgba(74, 71, 69, 0.5);
-  --primary-overlay:      rgba(110, 124, 92, 0.84);  /* ContactCTA bg — avoids opacity modifier */
+  --primary-overlay:      rgba(94, 122, 72, 0.84);   /* ContactCTA bg — updated to match new primary */
   --text-inverse-muted:   rgba(242, 231, 211, 0.80); /* subtext on primary bg */
 
   /* ── Shadows — warm-toned, visible depth ── */
@@ -126,6 +132,10 @@
   --color-accent-hover:         var(--accent-hover);
   --color-accent-light:         var(--accent-light);
   --color-accent-foreground:    var(--accent-foreground);
+  --color-warm:                 var(--warm);
+  --color-warm-hover:           var(--warm-hover);
+  --color-warm-light:           var(--warm-light);
+  --color-warm-foreground:      var(--warm-foreground);
   --color-border:               var(--border);
   --color-border-strong:        var(--border-strong);
   --color-border-subtle:        var(--border-subtle);

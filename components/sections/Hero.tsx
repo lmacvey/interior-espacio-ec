@@ -96,20 +96,6 @@ export default function Hero() {
           transition={{ ...transitions.smooth, delay: 0.2 }}
           className="order-2 relative flex justify-center md:justify-end"
         >
-          {/* Organic blob */}
-          <svg
-            className="absolute inset-0 w-full h-full hidden md:block pointer-events-none"
-            viewBox="0 0 400 400"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              d="M320 200 C320 280 270 350 200 350 C130 350 70 295 60 220 C50 145 100 60 175 50 C250 40 320 120 320 200Z"
-              fill="var(--primary-muted)"
-            />
-          </svg>
-
           {/* Photo */}
           <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden">
             <Image
