@@ -25,6 +25,7 @@ const description =
   "Acompañamiento psicológico en línea para transiciones de vida, momentos de cambio y procesos internos. Un espacio seguro para volver a ti.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: `${SITE_NAME} | Terapia en Línea`,
     template: `%s | ${SITE_NAME}`,

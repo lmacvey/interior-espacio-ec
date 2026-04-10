@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { fadeUp, fadeIn, transitions } from "@/lib/motion";
@@ -13,27 +14,44 @@ export default function Hero() {
 
         {/* Left col — text */}
         <div className="order-1">
-          {/* Pill tag */}
-          <motion.span
+          {/* Pill tags */}
+          <motion.div
             variants={fadeIn}
             initial={shouldReduceMotion ? "visible" : "hidden"}
             animate="visible"
-            className="inline-block rounded-full border border-primary-light bg-primary-muted px-4 py-1.5 text-xs font-medium text-primary tracking-wide mb-6"
+            className="flex flex-wrap gap-2 mb-6"
           >
-            Terapia 100% en línea
-          </motion.span>
+            <span className="inline-block rounded-full border border-primary-light bg-primary-muted px-4 py-1.5 text-xs font-medium text-primary tracking-wide">
+              Acompañamiento psicológico online
+            </span>
+            <span className="inline-block rounded-full border border-border bg-surface-2 px-4 py-1.5 text-xs font-medium text-text-secondary tracking-wide">
+              Español · Inglés
+            </span>
+          </motion.div>
 
           <motion.h1
             variants={fadeUp}
             initial={shouldReduceMotion ? "visible" : "hidden"}
             animate="visible"
             transition={{ ...transitions.gentle, delay: 0.1 }}
-            className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground mb-5"
+            className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground mb-3"
             style={{ lineHeight: "var(--leading-display)", letterSpacing: "var(--tracking-display)" }}
           >
-            Un espacio para{" "}
-            <span className="text-primary">volver a ti.</span>
+            Espacio para comprenderte, integrar tus emociones y{" "}
+            <span className="text-primary">encontrar claridad.</span>
           </motion.h1>
+
+          {/* Therapist byline */}
+          <motion.p
+            variants={fadeUp}
+            initial={shouldReduceMotion ? "visible" : "hidden"}
+            animate="visible"
+            transition={{ ...transitions.gentle, delay: 0.15 }}
+            className="text-sm text-text-secondary mb-6 font-medium"
+          >
+            Grace P. Pacheco{" "}
+            <span className="text-text-muted font-normal">| Psicóloga Clínica (USFQ)</span>
+          </motion.p>
 
           <motion.p
             variants={fadeUp}
@@ -70,7 +88,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right col — photo placeholder */}
+        {/* Right col — photo */}
         <motion.div
           variants={fadeIn}
           initial={shouldReduceMotion ? "visible" : "hidden"}
@@ -92,11 +110,17 @@ export default function Hero() {
             />
           </svg>
 
-          {/* Photo placeholder */}
-          <div className="relative w-full max-w-sm aspect-square rounded-3xl bg-border flex items-center justify-center overflow-hidden">
-            <span className="text-xs text-text-muted select-none">
-              Foto de terapeuta
-            </span>
+          {/* Photo */}
+          <div className="relative w-full max-w-sm aspect-square rounded-3xl overflow-hidden">
+            <Image
+              src="/hero-office.jpeg"
+              alt="Espacio de consulta cálido con sillones y luz natural"
+              fill
+              priority
+              loading="eager"
+              sizes="(max-width: 768px) 100vw, 384px"
+              className="object-cover"
+            />
 
             {/* Floating badge */}
             <span className="absolute bottom-4 right-4 rounded-full bg-background/90 backdrop-blur px-3 py-1.5 text-xs font-medium shadow-sm border border-border">

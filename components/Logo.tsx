@@ -37,7 +37,7 @@ export default function Logo({ size = "sm", className = "" }: LogoProps) {
         <line
           x1="9" y1="8" x2="9" y2="28"
           stroke="currentColor"
-          strokeWidth="2.4"
+          strokeWidth="3.0"
           strokeLinecap="round"
         />
 
@@ -45,24 +45,23 @@ export default function Logo({ size = "sm", className = "" }: LogoProps) {
         <line
           x1="9" y1="8" x2="21" y2="8"
           stroke="currentColor"
-          strokeWidth="2.0"
+          strokeWidth="2.5"
           strokeLinecap="round"
           opacity="0.55"
         />
 
-        {/* E — middle bar (longest — classic E proportion) */}
-        <line
-          x1="9" y1="18" x2="23" y2="18"
-          stroke="currentColor"
-          strokeWidth="2.0"
-          strokeLinecap="round"
-        />
+        {/* E — middle bar: growing string of dots reaching toward the I */}
+        <circle cx="11.8" cy="18" r="0.65" fill="currentColor" opacity="0.50" />
+        <circle cx="14.3" cy="18" r="0.90" fill="currentColor" opacity="0.60" />
+        <circle cx="16.9" cy="18" r="1.15" fill="currentColor" opacity="0.72" />
+        <circle cx="19.5" cy="18" r="1.40" fill="currentColor" opacity="0.84" />
+        <circle cx="22.1" cy="18" r="1.65" fill="currentColor" opacity="0.95" />
 
         {/* E — bottom bar */}
         <line
           x1="9" y1="28" x2="21" y2="28"
           stroke="currentColor"
-          strokeWidth="2.0"
+          strokeWidth="2.5"
           strokeLinecap="round"
           opacity="0.55"
         />

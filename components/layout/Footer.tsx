@@ -45,7 +45,7 @@ export default function Footer() {
         <div>
           <p className="font-semibold mb-3 text-text-primary">Contacto</p>
           <address className="not-italic text-text-muted space-y-2">
-            <p>contacto@interiorespacio.com</p>
+            <p>contacto@espaciointeriorec.com</p>
           </address>
           <Link
             href="/contact"

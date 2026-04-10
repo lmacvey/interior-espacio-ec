@@ -3,11 +3,13 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 import { PinterestBoardEmbed } from "@/components/blog/PinterestBoardEmbed";
-import { SOCIAL_LINKS } from "@/lib/constants";
+import { SOCIAL_LINKS, SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Reflexiones y recursos sobre salud mental y bienestar.",
+  description:
+    "Recursos y reflexiones sobre salud mental, transiciones de vida y bienestar emocional. Por Grace P. Pacheco, Psicóloga Clínica.",
+  alternates: { canonical: `${SITE_URL}/blog` },
 };
 
 export default function BlogPage() {

@@ -1,11 +1,57 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Globe, Compass, Heart, Users } from "lucide-react";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Servicios",
   description:
-    "Terapia en línea para transiciones de vida, procesos internos, emocionales y relacionales. Conoce cómo puedo acompañarte.",
+    "Terapia en línea individual para transiciones de vida, ansiedad, duelos, identidad y relaciones. Grace P. Pacheco, Psicóloga Clínica. Primera sesión de exploración gratuita.",
+  alternates: { canonical: `${SITE_URL}/services` },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Terapia en línea individual",
+  provider: { "@type": "Person", name: "Grace P. Pacheco" },
+  description:
+    "Terapia psicológica individual en línea para transiciones de vida y contexto, transiciones internas, transiciones emocionales y transiciones relacionales.",
+  url: `${SITE_URL}/services`,
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Áreas de acompañamiento",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Transiciones de vida y contexto",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Transiciones internas",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Transiciones emocionales",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Transiciones relacionales",
+        },
+      },
+    ],
+  },
 };
 
 const categories = [
@@ -67,6 +113,10 @@ const categories = [
 export default function ServicesPage() {
   return (
     <article className="py-16 md:py-24 px-4 md:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <div className="max-w-4xl mx-auto">
 
         {/* Page header */}

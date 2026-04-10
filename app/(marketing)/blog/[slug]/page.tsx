@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description: post?.meta.excerpt ?? "",
+    alternates: { canonical: pageUrl },
     openGraph: {
       type: "article",
       url: pageUrl,
@@ -50,8 +51,34 @@ export default async function BlogPostPage({ params }: Props) {
   const pageUrl = `${SITE_URL}/blog/${slug}`;
   const imageUrl = `${SITE_URL}/opengraph-image`;
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.meta.title,
+    description: post.meta.excerpt ?? "",
+    author: {
+      "@type": "Person",
+      name: "Grace P. Pacheco",
+      url: `${SITE_URL}/about`,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    datePublished: post.meta.date
+      ? new Date(post.meta.date).toISOString()
+      : undefined,
+    url: pageUrl,
+    image: imageUrl,
+  };
+
   return (
     <article className="py-24 px-6 max-w-3xl mx-auto prose">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <header className="not-prose mb-10">
         {post.meta.date && (
           <time className="text-sm text-muted-foreground">

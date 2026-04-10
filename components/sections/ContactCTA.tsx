@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { scaleIn } from "@/lib/motion";
@@ -13,13 +14,24 @@ export default function ContactCTA() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="py-24 px-4 md:px-6 bg-primary text-primary-foreground text-center">
+    <section className="relative py-24 px-4 md:px-6 text-primary-foreground text-center overflow-hidden">
+      {/* Background photo */}
+      <Image
+        src="/hero-office.jpeg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
+        aria-hidden="true"
+      />
+      {/* Sage overlay */}
+      <div className="absolute inset-0 bg-primary/80" aria-hidden="true" />
       <motion.div
         variants={scaleIn}
         initial={shouldReduceMotion ? "visible" : "hidden"}
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        className="max-w-xl mx-auto"
+        className="relative max-w-xl mx-auto"
       >
         <div className="flex justify-center mb-6 text-primary-foreground">
           <Logo size="sm" />

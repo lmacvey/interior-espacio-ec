@@ -3,11 +3,13 @@ import { Suspense } from "react";
 import ContactForm from "@/components/forms/ContactForm";
 import WhatsAppContactOption from "@/components/ui/WhatsAppContactOption";
 import { FacebookPageFeed } from "@/components/facebook/PageFeed";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Contacto",
   description:
-    "Escríbeme para agendar una sesión gratuita de exploración o hacer cualquier consulta.",
+    "Agenda tu sesión de exploración gratuita de 15 minutos con Grace P. Pacheco, Psicóloga Clínica. Sesiones en línea en español e inglés. Sin compromiso.",
+  alternates: { canonical: `${SITE_URL}/contact` },
 };
 
 export default function ContactPage() {

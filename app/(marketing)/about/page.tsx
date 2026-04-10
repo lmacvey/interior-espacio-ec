@@ -1,37 +1,64 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Sobre mí",
+  title: `Grace P. Pacheco — Psicóloga Clínica | ${SITE_NAME}`,
   description:
-    "Conoce a [Nombre de Terapeuta], psicóloga especializada en acompañamiento de transiciones de vida y procesos de cambio en línea.",
+    "Conoce a Grace P. Pacheco, Psicóloga Clínica (USFQ), especializada en acompañamiento de transiciones de vida y procesos de cambio. Sesiones online en español e inglés.",
+  alternates: { canonical: `${SITE_URL}/about` },
+};
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Grace P. Pacheco",
+  jobTitle: "Psicóloga Clínica",
+  description:
+    "Psicóloga clínica especializada en acompañamiento de transiciones de vida y procesos de cambio. Enfoque no directivo, humanista, sesiones en línea en español e inglés.",
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Universidad San Francisco de Quito (USFQ)",
+    address: { "@type": "PostalAddress", addressCountry: "EC" },
+  },
+  knowsLanguage: ["es", "en"],
+  url: `${SITE_URL}/about`,
 };
 
 export default function AboutPage() {
   return (
     <article className="py-16 md:py-24 px-4 md:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <div className="max-w-4xl mx-auto">
 
         {/* Hero — photo + intro */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start mb-16 md:mb-20">
           {/* Photo placeholder */}
           <div className="rounded-2xl bg-border aspect-[4/3] flex items-center justify-center text-muted-foreground text-xs select-none">
-            Foto de [Nombre de Terapeuta]
+            Foto de Grace P. Pacheco
           </div>
 
           <div className="pt-2">
-            <h1 className="font-display text-3xl md:text-4xl mb-5">
-              Hola, soy [Nombre de Terapeuta]
+            <h1 className="font-display text-3xl md:text-4xl mb-2">
+              Hola, soy Grace
             </h1>
+            <p className="text-sm text-muted-foreground font-medium mb-5">
+              Grace P. Pacheco · Psicóloga Clínica (USFQ) · Español &amp; Inglés
+            </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Soy psicóloga y me especializo en el acompañamiento de personas
+              Soy psicóloga clínica graduada de la Universidad San Francisco de
+              Quito (USFQ) y me especializo en el acompañamiento de personas
               que atraviesan transiciones: esos momentos en que algo cambia y
               todavía no sabes muy bien cómo seguir.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Trabajo en línea, lo que me permite acompañar a personas en
-              distintos países y contextos. Creo que la distancia geográfica no
-              tiene que ser un obstáculo para acceder a un espacio terapéutico.
+              Trabajo en línea, en español e inglés, lo que me permite
+              acompañar a personas en distintos países y contextos. Creo que la
+              distancia geográfica no tiene que ser un obstáculo para acceder a
+              un espacio terapéutico.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Mi enfoque es no directivo, humanista y centrado en ti. No vengo
@@ -82,7 +109,7 @@ export default function AboutPage() {
           <ul className="space-y-3 text-muted-foreground text-sm">
             <li className="flex items-start gap-2">
               <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-              Licenciatura en Psicología — [Universidad], [País], [Año]
+              Psicóloga Clínica — Universidad San Francisco de Quito (USFQ), Ecuador
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
@@ -98,7 +125,7 @@ export default function AboutPage() {
         {/* CTA */}
         <div className="rounded-2xl bg-muted border border-border p-8 text-center">
           <p className="font-display text-xl md:text-2xl mb-3">
-            ¿Quieres conocernos?
+            ¿Quieres conocerme?
           </p>
           <p className="text-muted-foreground mb-6 max-w-sm mx-auto text-sm leading-relaxed">
             Agenda una sesión gratuita de exploración de 15 minutos, sin

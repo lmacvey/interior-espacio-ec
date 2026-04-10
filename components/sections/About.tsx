@@ -19,7 +19,7 @@ export default function About() {
           className="rounded-2xl bg-border aspect-[4/3] flex items-center justify-center"
         >
           <span className="text-xs text-text-muted select-none">
-            Foto de [Nombre de Terapeuta]
+            Foto de Grace P. Pacheco
           </span>
         </motion.div>
 
@@ -35,21 +35,25 @@ export default function About() {
             Sobre mí
           </p>
           <h2
-            className="font-display text-2xl sm:text-3xl md:text-4xl mb-5"
+            className="font-display text-2xl sm:text-3xl md:text-4xl mb-2"
             style={{ lineHeight: "var(--leading-heading)" }}
           >
             Un acompañamiento <span className="text-primary">desde adentro.</span>
           </h2>
+          <p className="text-sm text-text-muted mb-5 font-medium">
+            Grace P. Pacheco{" "}
+            <span className="font-normal">| Psicóloga Clínica (USFQ)</span>
+          </p>
           <p className="text-text-secondary mb-4" style={{ lineHeight: "var(--leading-body)" }}>
-            Soy [Nombre de Terapeuta], psicóloga especializada en el
-            acompañamiento de transiciones y procesos de cambio. Creo que los
+            Soy Grace, psicóloga clínica graduada de la USFQ. Me especializo en
+            el acompañamiento de transiciones y procesos de cambio. Creo que los
             momentos de quiebre también son oportunidades de reencuentro con
             uno mismo.
           </p>
           <p className="text-text-secondary mb-4" style={{ lineHeight: "var(--leading-body)" }}>
-            Trabajo en línea, lo que te permite acceder al proceso terapéutico
-            desde cualquier lugar — sin barreras geográficas y con la
-            flexibilidad que tu vida requiere.
+            Ofrezco sesiones en español e inglés, en línea, para que puedas
+            acceder al proceso terapéutico desde cualquier lugar — sin barreras
+            geográficas y con la flexibilidad que tu vida requiere.
           </p>
           <p className="text-text-secondary mb-8" style={{ lineHeight: "var(--leading-body)" }}>
             Mi enfoque es no directivo, sin juicio y centrado en ti. No vengo
