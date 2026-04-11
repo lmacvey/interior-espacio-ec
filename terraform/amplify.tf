@@ -11,6 +11,10 @@ resource "aws_iam_role" "amplify_build" {
   })
 
   tags = { app = "interior-espacio-ec" }
+
+  lifecycle {
+    ignore_changes = [description]
+  }
 }
 
 resource "aws_iam_role_policy_attachment" "amplify_build" {
@@ -55,10 +59,12 @@ resource "aws_amplify_app" "site" {
     CONTACT_EMAIL         = var.contact_email
     SES_FROM_EMAIL        = var.ses_from_email
     FACEBOOK_PAGE_ID      = var.facebook_page_id
-    NEXT_PUBLIC_INSTAGRAM_URL = var.instagram_url
-    NEXT_PUBLIC_FACEBOOK_URL  = var.facebook_url
-    NEXT_PUBLIC_LINKEDIN_URL  = var.linkedin_url
+    NEXT_PUBLIC_INSTAGRAM_URL   = var.instagram_url
+    NEXT_PUBLIC_FACEBOOK_URL    = var.facebook_url
+    NEXT_PUBLIC_LINKEDIN_URL    = var.linkedin_url
     NEXT_PUBLIC_WHATSAPP_NUMBER = var.whatsapp_number
+    NEXT_PUBLIC_PINTEREST_URL   = var.pinterest_url
+    PINTEREST_DOMAIN_VERIFY     = var.pinterest_domain_verify
     SES_REGION            = var.aws_region
 
     # SES IAM credentials — populated after IAM resource is created
@@ -67,9 +73,15 @@ resource "aws_amplify_app" "site" {
     SES_SECRET_ACCESS_KEY = aws_iam_access_key.ses_sender.secret
 
     # Sensitive — Amplify stores these but does not expose them in the console
+    FACEBOOK_APP_ID                        = var.facebook_app_id
+    FACEBOOK_APP_SECRET                    = var.facebook_app_secret
     FACEBOOK_ACCESS_TOKEN                  = var.facebook_access_token
     FACEBOOK_PAGE_ACCESS_TOKEN             = var.facebook_access_token
 NEXT_SERVER_ACTIONS_ENCRYPTION_KEY     = var.next_server_actions_encryption_key
+
+    # Substack RSS feed
+    SUBSTACK_PUBLICATION            = var.substack_publication
+    NEXT_PUBLIC_SUBSTACK_HANDLE     = var.next_public_substack_handle
 
     # Substack → Facebook automation
     CRON_SECRET                = var.cron_secret

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import ContactForm from "@/components/forms/ContactForm";
 import WhatsAppContactOption from "@/components/ui/WhatsAppContactOption";
-import { FacebookPageFeed } from "@/components/facebook/PageFeed";
 import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -30,12 +28,6 @@ export default function ContactPage() {
 
       <ContactForm />
 
-      <div className="mt-16 pt-12 border-t">
-        <h2 className="text-xl font-semibold mb-6">En Facebook</h2>
-        <Suspense fallback={null}>
-          <FacebookPageFeed limit={3} />
-        </Suspense>
-      </div>
     </section>
   );
 }

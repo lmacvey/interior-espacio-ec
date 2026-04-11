@@ -1,0 +1,61 @@
+<svg
+  width="1024"
+  height="1024"
+  viewBox="0 0 1024 1024"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Background — sage green brand primary -->
+  <rect width="1024" height="1024" fill="#5f7260"/>
+
+  <!--
+    EI monogram mark scaled to 55% of canvas width (~563px),
+    centered at (512, 512).
+
+    Source viewBox: 0 0 36 36
+    Scale: 22.25   Translate: (64, 112)
+
+    Mark bounds at this scale:
+      left  ~231px  (22.6%)    right ~794px (77.5%)
+      top   ~262px  (25.6%)   bottom ~763px (74.5%)
+  -->
+  <g transform="translate(64, 112) scale(22.25)">
+
+    <!-- E — vertical spine -->
+    <line
+      x1="9" y1="8" x2="9" y2="28"
+      stroke="white"
+      stroke-width="3.0"
+      stroke-linecap="round"
+    />
+
+    <!-- E — top bar -->
+    <line
+      x1="9" y1="8" x2="21" y2="8"
+      stroke="white"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      opacity="0.55"
+    />
+
+    <!-- E — middle bar: growing dot progression reaching toward the I -->
+    <circle cx="11.8" cy="18" r="0.65" fill="white" opacity="0.50"/>
+    <circle cx="14.3" cy="18" r="0.90" fill="white" opacity="0.60"/>
+    <circle cx="16.9" cy="18" r="1.15" fill="white" opacity="0.72"/>
+    <circle cx="19.5" cy="18" r="1.40" fill="white" opacity="0.84"/>
+    <circle cx="22.1" cy="18" r="1.65" fill="white" opacity="0.95"/>
+
+    <!-- E — bottom bar -->
+    <line
+      x1="9" y1="28" x2="21" y2="28"
+      stroke="white"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      opacity="0.55"
+    />
+
+    <!-- I — the dot. The interior space between E and I is the concept. -->
+    <circle cx="30" cy="18" r="2.8" fill="white"/>
+
+  </g>
+</svg>

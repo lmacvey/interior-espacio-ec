@@ -59,8 +59,21 @@ variable "ses_from_email" {
   type        = string
 }
 
+variable "facebook_app_id" {
+  description = "Facebook App ID (from Settings → Basic in the Developer Portal)"
+  type        = string
+  default     = ""
+}
+
+variable "facebook_app_secret" {
+  description = "Facebook App Secret — used server-side to verify data-deletion callbacks"
+  type        = string
+  sensitive   = true
+  default     = ""
+}
+
 variable "facebook_access_token" {
-  description = "Facebook Graph API access token"
+  description = "Facebook long-lived Page Access Token (from Graph API Explorer)"
   type        = string
   sensitive   = true
 }
@@ -97,6 +110,31 @@ variable "linkedin_url" {
 variable "whatsapp_number" {
   type    = string
   default = ""
+}
+
+variable "pinterest_url" {
+  type    = string
+  default = ""
+}
+
+variable "pinterest_domain_verify" {
+  description = "Pinterest domain verification token (from Pinterest business settings)"
+  type        = string
+  default     = ""
+}
+
+# ── Substack ─────────────────────────────────────────────────────────────────
+
+variable "substack_publication" {
+  description = "Substack publication subdomain (e.g. espaciointeriorec — used server-side for RSS feed)"
+  type        = string
+  default     = ""
+}
+
+variable "next_public_substack_handle" {
+  description = "Substack handle without @ (e.g. espaciointeriorec — used client-side for subscribe link)"
+  type        = string
+  default     = ""
 }
 
 # ── Cron ─────────────────────────────────────────────────────────────────────

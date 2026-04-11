@@ -79,7 +79,7 @@ export async function getPageFeed(limit = 5): Promise<FeedPost[]> {
 
   const fields =
     "id,message,story,created_time,full_picture,permalink_url";
-  const url = `${GRAPH_BASE}/${pageId}/feed?fields=${fields}&limit=${limit}&access_token=${token}`;
+  const url = `${GRAPH_BASE}/${pageId}/posts?fields=${fields}&limit=${limit}&access_token=${token}`;
 
   const res = await fetch(url, { next: { revalidate: 1800 } });
   const data = await res.json();

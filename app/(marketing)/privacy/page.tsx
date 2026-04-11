@@ -383,12 +383,6 @@ export default function PrivacyPage() {
                 label: "Política de privacidad de Substack",
               },
               {
-                name: "Facebook / Meta",
-                body: "Este sitio puede mostrar contenido público de nuestra página de Facebook. Al interactuar con dicho contenido, aplican las políticas de privacidad de Meta Platforms, Inc.",
-                href: "https://www.facebook.com/privacy/policy/",
-                label: "Política de privacidad de Meta",
-              },
-              {
                 name: "Pinterest",
                 body: "Este sitio puede incrustar contenido de Pinterest. Al visualizarlo, Pinterest puede recopilar datos técnicos conforme a sus propias políticas.",
                 href: "https://policy.pinterest.com/privacy-policy",
@@ -411,6 +405,32 @@ export default function PrivacyPage() {
                 </p>
               </div>
             ))}
+
+            {/* Facebook — rendered separately to support inline link */}
+            <div>
+              <p className="font-medium text-text-primary mb-1">Facebook / Meta</p>
+              <p>
+                Este sitio muestra contenido público de nuestra página de Facebook mediante
+                la API de lectura de Meta. No solicitamos autorización a usuarios de Facebook
+                ni almacenamos datos de cuentas personales. Puedes consultar nuestras{" "}
+                <Link
+                  href="/facebook/data-deletion"
+                  className="text-primary underline underline-offset-2"
+                >
+                  instrucciones de eliminación de datos
+                </Link>
+                . Al interactuar con contenido de Facebook, aplican las{" "}
+                <a
+                  href="https://www.facebook.com/privacy/policy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline underline-offset-2"
+                >
+                  políticas de privacidad de Meta
+                </a>
+                .
+              </p>
+            </div>
           </div>
         </PolicySection>
 
