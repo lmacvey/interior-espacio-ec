@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
@@ -36,9 +37,17 @@ export default function AboutPage() {
 
         {/* Hero — photo + intro */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start mb-16 md:mb-20">
-          {/* Photo placeholder */}
-          <div className="rounded-2xl bg-border aspect-[4/3] flex items-center justify-center text-muted-foreground text-xs select-none">
-            Foto de Grace P. Pacheco
+          {/* Photo */}
+          <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
+            <Image
+              src="/grace-pacheco.jpg"
+              alt="Grace P. Pacheco — Psicóloga Clínica"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+              style={{ objectPosition: "center 15%" }}
+            />
           </div>
 
           <div className="pt-2">
@@ -70,24 +79,32 @@ export default function AboutPage() {
 
         {/* Approach */}
         <section className="mb-14">
-          <h2 className="font-display text-2xl md:text-3xl mb-5">Mi enfoque</h2>
+          <h2 className="font-display text-2xl md:text-3xl mb-3">Mi enfoque</h2>
+          <p className="text-muted-foreground leading-relaxed mb-6 max-w-2xl">
+            Trabajo desde una perspectiva <strong className="text-foreground font-medium">integrativa</strong> —
+            lo que significa que no me limito a una sola escuela de pensamiento.
+            En lugar de aplicar un protocolo fijo, elijo herramientas y formas de
+            acompañarte según lo que tú necesitas, lo que el momento pide, y lo
+            que ha demostrado ser genuinamente útil. Esto me permite estar presente
+            contigo, no con un manual.
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               {
-                title: "Sin juicio",
-                body: "Creo en la capacidad de cada persona para comprenderse y tomar sus propias decisiones. Mi rol es acompañar, no evaluar ni corregir.",
+                title: "Un marco sólido, no una caja rígida",
+                body: "Tengo una base teórica clara — humanista, no directiva — pero estoy abierta a incorporar elementos de otras perspectivas cuando son útiles para ti. No te ajusto a mi enfoque; adapto el enfoque a ti.",
               },
               {
-                title: "A tu ritmo",
-                body: "No hay urgencia ni agenda predefinida. El proceso avanza según lo que tú necesitas y lo que emerge en cada sesión.",
+                title: "Lo que funciona, no lo que está de moda",
+                body: "Tomo elementos de distintas corrientes según lo que la evidencia y la práctica muestran que ayuda. No me caso con una técnica si hay otra que se ajusta mejor a tu proceso.",
               },
               {
-                title: "100% en línea",
-                body: "Las sesiones son por videollamada. Puedes conectarte desde donde estés, con la comodidad y privacidad de tu propio espacio.",
+                title: "Sin juicio, a tu ritmo",
+                body: "Creo en tu capacidad para comprenderte y tomar tus propias decisiones. No hay urgencia ni agenda predefinida. El proceso avanza según lo que emerge en cada sesión.",
               },
               {
-                title: "Proceso individual",
-                body: "Cada persona es única. No aplico protocolos fijos — adapto el acompañamiento a tu historia, tu contexto y lo que trae cada sesión.",
+                title: "Lo que nos hace humanos",
+                body: "Más allá de las diferencias entre enfoques, hay algo que todos comparten: la importancia del vínculo, la escucha real y el espacio seguro. Eso es lo que cuido en cada sesión.",
               },
             ].map((item) => (
               <div
@@ -113,11 +130,11 @@ export default function AboutPage() {
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-              [Formación o especialización adicional]
+              Master of Arts in Media Psychology — Fielding Graduate University, USA
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-              [Otra formación relevante]
+              Human Resources Essentials (Certification) — Cornell University, USA
             </li>
           </ul>
         </section>
@@ -133,7 +150,7 @@ export default function AboutPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block rounded-full bg-primary px-7 py-3 text-primary-foreground font-medium hover:opacity-90 transition-opacity"
+            className="inline-block rounded-full bg-primary px-7 py-3 text-primary-foreground font-medium transition-colors duration-200 hover:bg-primary-hover active:scale-[0.98]"
           >
             Agenda tu consulta gratuita
           </Link>
