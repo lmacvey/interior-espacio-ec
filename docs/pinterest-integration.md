@@ -24,7 +24,7 @@ export const SOCIAL_LINKS = {
 **Modify** `.env.example` — add:
 ```
 PINTEREST_DOMAIN_VERIFY=
-NEXT_PUBLIC_PINTEREST_URL=https://pinterest.com/interiorespacio
+NEXT_PUBLIC_PINTEREST_URL=https://pinterest.com/espaciointeriorec
 ```
 
 Create `.env.local` with the same keys (empty values for now).

@@ -8,7 +8,7 @@ This guide covers the **operational setup** required to connect the site to Face
 
 ## Prerequisites
 
-- Facebook personal account with **Admin role** on the Facebook Page (`facebook.com/interiorespacioec`)
+- Facebook personal account with **Admin role** on the Facebook Page (`facebook.com/espaciointeriorec`)
 - Access to `.env.local` on the deployment server (or AWS Secrets Manager if deployed)
 - Chrome with [Meta Pixel Helper](https://chromewebstore.google.com/detail/meta-pixel-helper/fdgfkebogiimcoedlicjlajpkdmockpc) extension installed (for testing)
 
@@ -24,7 +24,7 @@ Meta Business Suite is required to manage the Page, App, and Pixel under one bus
    - Business name: `Espacio Interior`
    - Your name and work email
 4. After creation, go to **Business Settings → Accounts → Pages**
-5. Click **Add → Add a Page** and select `interiorespacioec`
+5. Click **Add → Add a Page** and select `espaciointeriorec`
    - You must already be an Admin on that Page
 6. *(Optional — required for ads)* Go to **Billing & Payments** → add a payment method
 
@@ -128,7 +128,7 @@ Run:
 https://graph.facebook.com/me/accounts?access_token={60_DAY_USER_TOKEN}
 ```
 
-The response is a list of Pages the user manages. Find `interiorespacioec` in the `data` array and copy two values:
+The response is a list of Pages the user manages. Find `espaciointeriorec` in the `data` array and copy two values:
 
 - `"id"` → your **Page ID** (`FACEBOOK_PAGE_ID`)
 - `"access_token"` → your **Page Access Token** (`FACEBOOK_PAGE_ACCESS_TOKEN`)
@@ -259,7 +259,7 @@ FACEBOOK_PAGE_ID=               # Numeric Page ID (e.g. 123456789012345)
 FACEBOOK_PAGE_ACCESS_TOKEN=     # Never-expiring Page token from Step 5.4
 
 # Facebook public (exposed to browser via NEXT_PUBLIC_ prefix)
-NEXT_PUBLIC_FACEBOOK_URL=https://facebook.com/interiorespacioec
+NEXT_PUBLIC_FACEBOOK_URL=https://facebook.com/espaciointeriorec
 NEXT_PUBLIC_FACEBOOK_PIXEL_ID=  # Pixel ID from Step 6.1
 
 # Admin panel (unrelated to FB, but required for /admin/facebook)
