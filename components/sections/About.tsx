@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { slideInLeft, fadeUp, transitions } from "@/lib/motion";
@@ -16,11 +17,16 @@ export default function About() {
           initial={shouldReduceMotion ? "visible" : "hidden"}
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="rounded-2xl bg-secondary-light aspect-[4/3] flex items-center justify-center"
+          className="relative rounded-2xl overflow-hidden aspect-[3/4]"
         >
-          <span className="text-xs text-secondary select-none">
-            Foto de Grace P. Pacheco
-          </span>
+          <Image
+            src="/grace-pacheco.jpg"
+            alt="Grace P. Pacheco — Psicóloga Clínica"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+            style={{ objectPosition: "center 15%" }}
+          />
         </motion.div>
 
         {/* Text */}
@@ -56,8 +62,11 @@ export default function About() {
             geográficas y con la flexibilidad que tu vida requiere.
           </p>
           <p className="text-text-secondary mb-8" style={{ lineHeight: "var(--leading-body)" }}>
-            Mi enfoque es no directivo, sin juicio y centrado en ti. No vengo
-            a darte respuestas, sino a acompañarte mientras las encuentras.
+            Mi enfoque es no directivo, sin juicio y centrado en ti. Trabajo
+            desde una perspectiva integrativa: elijo las herramientas que mejor
+            se adaptan a ti y a lo que el momento pide, en lugar de seguir un
+            único protocolo. No vengo a darte respuestas, sino a acompañarte
+            mientras las encuentras.
           </p>
           <Link
             href="/about"

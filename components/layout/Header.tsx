@@ -34,7 +34,7 @@ export default function Header() {
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
 
           <Link href="/" aria-label="Espacio Interior — Inicio" className="text-primary">
-            <Logo size="sm" />
+            <Logo size="md" />
           </Link>
 
           {/* Desktop nav */}
