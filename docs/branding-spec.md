@@ -22,26 +22,31 @@ The name "Espacio Interior" carries the brand's entire philosophy in two words: 
 
 ### Client Colors — Source of Truth
 
-These six colors were specified by the client. All other tokens are derived from them.
+These colors were specified by the client or derived from the hero office photo. All other tokens are derived from them.
 
 | Swatch | Hex | Role |
 |---|---|---|
 | Linen Cream | `#F2E7D3` | Page background |
 | Warm Sand | `#D7C5AE` | Section alternation (surface-1) |
 | Warm Charcoal | `#4A4745` | Text / foreground |
-| Sage Green | `#6E7C5C` | Primary brand (therapeutic trust) |
+| Sage Green | `#5E7A48` | Primary brand (therapeutic trust) |
 | Cognac | `#A56C3D` | Secondary brand (warmth, invitation) |
-| Espresso | `#6B4428` | Accent (depth, decorative) |
+| Terracotta | `#B86030` | Accent (warmth, decorative — from photo pillow) |
+| Amber | `#C88820` | Warm highlight (lamp glow — decorative only) |
+
+> **v2 palette update:** Primary sage was shifted from `#6E7C5C` to `#5E7A48` (more vivid, matches the lush plants in the hero office photo). Accent was changed from espresso `#6B4428` to terracotta `#B86030` (mirrors the orange pillow, the photo's warmest focal point). A new `--warm` amber token `#C88820` was added to capture the golden lamp glow for future decorative use.
 
 ### Role Assignment Rationale
 
 **Surface hierarchy** — The palette naturally suggests a 3-tier stack from lightest to darkest: linen cream → warm sand → deeper sand. This creates clearly distinct section zones without needing unrelated colours.
 
-**Primary: Sage green** — Chosen as primary because desaturated greens are linked to reduced physiological stress (Ulrich, 1984). It communicates "growth without pressure" — appropriate for the therapeutic context.
+**Primary: Sage green** — Chosen as primary because desaturated greens are linked to reduced physiological stress (Ulrich, 1984). It communicates "growth without pressure" — appropriate for the therapeutic context. Shifted slightly more vivid (`#5E7A48`) to better match the live plants in the hero photo.
 
 **Secondary: Cognac** — Warm, earthy, inviting. Used for secondary CTAs, decorative accents, and section dividers. Never on primary action buttons (sage owns trust; cognac owns warmth).
 
-**Accent: Espresso** — The deepest value in the palette. Used sparingly: deep borders, hover states, decorative emphasis. Provides visual anchor without introducing an unrelated hue.
+**Accent: Terracotta** — Replaced espresso. The terracotta `#B86030` directly mirrors the orange pillow in the hero photo — the image's most emotionally warm element. Used sparingly: Process step 3, Testimonial quote marks, decorative emphasis.
+
+**Warm: Amber** — A new decorative token inspired by the hero photo's lamp glow. Not used on text. Reserved for icons, highlights, and subtle decorative elements that need a golden warmth distinct from cognac.
 
 **Foreground: Charcoal** — A warm near-black (not pure #000000). Avoids the harshness of true black against cream backgrounds; the warmth ties it to the earth tones.
 
@@ -62,10 +67,10 @@ These six colors were specified by the client. All other tokens are derived from
   --text-inverse:         #F2E7D3;   /* linen cream — on dark/primary backgrounds */
 
   /* ── Primary: Sage Green ── */
-  --primary:              #6E7C5C;   /* client: sage green */
-  --primary-hover:        #586748;   /* derived: 15% darker */
-  --primary-light:        #B8C8A8;   /* derived: light sage — icon containers, pill tags */
-  --primary-muted:        #D8E3CE;   /* derived: very light sage — hero blob, tints */
+  --primary:              #5E7A48;   /* shifted: vivid sage — matches photo plants */
+  --primary-hover:        #4E6A3A;   /* derived: 15% darker */
+  --primary-light:        #A8C090;   /* derived: light sage — icon containers, pill tags */
+  --primary-muted:        #D0E0C0;   /* derived: very light sage — section tints */
   --primary-foreground:   #ffffff;   /* white on sage — WCAG AA (4.5:1) */
 
   /* ── Secondary: Cognac ── */
@@ -74,11 +79,17 @@ These six colors were specified by the client. All other tokens are derived from
   --secondary-light:      #D4A87A;   /* derived: light cognac tint */
   --secondary-foreground: #ffffff;   /* white on cognac — passes AA */
 
-  /* ── Accent: Espresso ── */
-  --accent:               #6B4428;   /* client: espresso */
-  --accent-hover:         #573620;   /* derived */
-  --accent-light:         #C09878;   /* derived: medium warm brown */
-  --accent-foreground:    #F2E7D3;   /* linen cream on dark espresso */
+  /* ── Accent: Terracotta ── */
+  --accent:               #B86030;   /* photo pillow — warm terracotta */
+  --accent-hover:         #9A5028;   /* derived: deeper terracotta */
+  --accent-light:         #E8C0A0;   /* derived: light terracotta tint */
+  --accent-foreground:    #ffffff;   /* white on terracotta — passes AA */
+
+  /* ── Warm: Amber/Honey ── */
+  --warm:                 #C88820;   /* photo lamp — golden warmth, decorative only */
+  --warm-hover:           #A87010;   /* derived */
+  --warm-light:           #F0D890;   /* derived: soft amber tint */
+  --warm-foreground:      #4A4745;   /* charcoal on amber — passes AA */
 
   /* ── Borders ── */
   --border:               #C4B09C;   /* derived: visible on linen bg */
@@ -94,7 +105,7 @@ These six colors were specified by the client. All other tokens are derived from
   --destructive-light:    #fde8e6;
 
   /* ── Interaction ── */
-  --ring:                 #6E7C5C;   /* = primary */
+  --ring:                 #5E7A48;   /* = primary */
   --ring-offset:          #F2E7D3;   /* = background */
   --overlay:              rgba(74, 71, 69, 0.5);
 
@@ -122,11 +133,12 @@ These six colors were specified by the client. All other tokens are derived from
 | `--text-secondary` | #5a5755 | #F2E7D3 bg | ~6.4:1 | AAA ✓ |
 | `--text-muted` | #6a6158 | #F2E7D3 bg | ~4.6:1 | AA ✓ |
 | `--text-muted` | #6a6158 | #D7C5AE surface-1 | ~3.2:1 | AA Large (use 14px+) |
-| `--primary` | #6E7C5C | #F2E7D3 bg | ~3.7:1 | AA Large / decorative |
-| White on `--primary` | #fff / #6E7C5C | — | ~4.5:1 | AA ✓ (buttons) |
-| `--accent` | #6B4428 | #F2E7D3 bg | ~7.0:1 | AAA ✓ |
+| `--primary` | #5E7A48 | #F2E7D3 bg | ~3.9:1 | AA Large / decorative |
+| White on `--primary` | #fff / #5E7A48 | — | ~4.6:1 | AA ✓ (buttons) |
+| `--accent` | #B86030 | #F2E7D3 bg | ~4.2:1 | AA Large / decorative |
+| White on `--accent` | #fff / #B86030 | — | ~3.5:1 | AA Large (18px+) |
 
-> **Note**: Sage green (#6E7C5C) and cognac (#A56C3D) do not pass AA for normal body text on the linen background — they are brand/accent colours used for headings, buttons, icons, and decorative elements only. All body copy uses `--text-secondary` (#5a5755) which passes AAA.
+> **Note**: Sage green (#5E7A48) and cognac (#A56C3D) do not pass AA for normal body text on the linen background — they are brand/accent colours used for headings, buttons, icons, and decorative elements only. All body copy uses `--text-secondary` (#5a5755) which passes AAA. Terracotta `--accent` (#B86030) should only be used decoratively or at 18px+ for AA compliance.
 
 ### What NOT to do
 
@@ -243,7 +255,7 @@ Never place two `bg-surface-1` sections adjacent. Testimonial cards on a linen s
 
 | Variant | Use | Background | Text | Hover |
 |---|---|---|---|---|
-| **Primary** | Main CTA | `--primary` (#6E7C5C) | white | `--primary-hover` |
+| **Primary** | Main CTA | `--primary` (#5E7A48) | white | `--primary-hover` |
 | **Secondary** | Warm CTA | `--secondary` (#A56C3D) | white | `--secondary-hover` |
 | **Ghost** | Alternate CTA | transparent | `--foreground` | bg `--surface-1` |
 | **Outlined Sage** | Tertiary | transparent | `--primary` | bg `--primary-muted` |
@@ -346,8 +358,17 @@ export const mobileMenu       = { hidden: { opacity: 0, height: 0 }, visible: { 
 ### Treatment
 All photos: `filter: brightness(0.98) saturate(0.90)` — harmonises with the warm linen palette.
 
-### Hero Blob
-SVG blob behind therapist photo. Color: `--primary-muted` (`#D8E3CE`).
+### Hero Photo
+Full-column `4/3` landscape image of a warm therapy office. Sits in the right column of the hero grid. The blob decoration was removed once the full photo was added — the photo has sufficient visual presence.
+
+Color reference extracted from the photo:
+| Element | Hex | Mapped to |
+|---|---|---|
+| Cream walls | `#F0E8D8` | `--background` (harmonises) |
+| Blond wood | `#C8A870` | `--secondary-light` (harmonises) |
+| Orange pillow | `#C07040` | `--accent` (`#B86030`) |
+| Plants | `#4A6830`–`#5A8040` | `--primary` (`#5E7A48`) |
+| Lamp glow | `#D4901A`–`#E8A830` | `--warm` (`#C88820`) |
 
 ### Logo
 SVG uses `currentColor` throughout. Wrap in `text-primary` (sage) for default use, `text-primary-foreground` (white) on the sage ContactCTA section.
@@ -361,9 +382,10 @@ SVG uses `currentColor` throughout. Wrap in `text-primary` (sage) for default us
 | Linen cream `#F2E7D3` background | Richer than off-white; associated with aged paper, letters, handwritten notes — human artefacts |
 | Warm sand `#D7C5AE` surface-1 | Clear rhythmic contrast; sections breathe and separate without jarring colour shifts |
 | Charcoal `#4A4745` text | Warm near-black avoids the coldness of pure #000 against cream; visually cohesive with earth palette |
-| Sage green `#6E7C5C` primary | Therapeutic trust colour; enough saturation to anchor the page but not aggressive |
+| Sage green `#5E7A48` primary | Therapeutic trust colour; vivid enough to anchor the page and harmonise with the hero photo's live plants |
 | Cognac `#A56C3D` secondary | Warmth and earthiness; signals invitation rather than clinical precision |
-| Espresso `#6B4428` accent | Provides the deepest visual weight; used sparingly so it registers as intentional, not decorative noise |
+| Terracotta `#B86030` accent | Mirrors the orange pillow in the hero photo — the image's most emotionally inviting element; used sparingly |
+| Amber `#C88820` warm | Captures the golden lamp glow from the hero photo; reserved for decorative highlights only |
 | Pill-shaped buttons | No sharp corners → no perceived aggression; the form says "you can approach this" |
 | Playfair Display serif | Signals permanence and thoughtfulness; pairs naturally with earthy palette |
 | `leading-body: 1.65` | Generous line-height → reader doesn't feel rushed |
