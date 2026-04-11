@@ -50,6 +50,19 @@ output "ses_dkim_cname_records" {
   ]
 }
 
+# ── App IAM credentials (DynamoDB) ───────────────────────────────────────────
+
+output "app_iam_access_key_id" {
+  description = "DYNAMODB_ACCESS_KEY_ID for the app IAM user"
+  value       = aws_iam_access_key.app.id
+}
+
+output "app_iam_secret_access_key" {
+  description = "DYNAMODB_SECRET_ACCESS_KEY for the app IAM user"
+  value       = aws_iam_access_key.app.secret
+  sensitive   = true
+}
+
 # ── IAM / SES credentials — inject into Amplify env vars ─────────────────────
 
 output "ses_iam_access_key_id" {

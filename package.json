@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.1028.0",
+    "@aws-sdk/client-ses": "^3.1028.0",
     "@aws-sdk/lib-dynamodb": "^3.1028.0",
     "@hookform/resolvers": "^3.0.0",
     "@radix-ui/react-accordion": "^1.0.0",

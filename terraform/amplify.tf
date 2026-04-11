@@ -1,7 +1,30 @@
+resource "aws_iam_role" "amplify_build" {
+  name = "interior-espacio-amplify-build"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect    = "Allow"
+      Principal = { Service = "amplify.amazonaws.com" }
+      Action    = "sts:AssumeRole"
+    }]
+  })
+
+  tags = { app = "interior-espacio-ec" }
+}
+
+resource "aws_iam_role_policy_attachment" "amplify_build" {
+  role       = aws_iam_role.amplify_build.name
+  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess-Amplify"
+}
+
 resource "aws_amplify_app" "site" {
-  name         = "interior-espacio-ec"
-  repository   = var.github_repository
-  access_token = var.github_token
+  name                 = "interior-espacio-ec"
+  repository           = var.github_repository
+  access_token         = var.github_token
+  iam_service_role_arn = aws_iam_role.amplify_build.arn
+
+  depends_on = [aws_iam_role_policy_attachment.amplify_build]
 
   # Let Amplify detect and configure Next.js automatically
   platform = "WEB_COMPUTE"
@@ -74,9 +97,9 @@ resource "aws_amplify_branch" "main" {
 resource "aws_amplify_domain_association" "site" {
   app_id                = aws_amplify_app.site.id
   domain_name           = var.domain_name
+  wait_for_verification = false
   certificate_settings {
-    type            = "CUSTOM"
-    custom_certificate_arn = aws_acm_certificate_validation.site.certificate_arn
+    type = "AMPLIFY_MANAGED"
   }
 
   # Root domain → main branch

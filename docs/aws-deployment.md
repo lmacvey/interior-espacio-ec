@@ -52,51 +52,13 @@ Terraform needs an IAM user with programmatic access (access key) to provision a
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "Amplify",
-      "Effect": "Allow",
-      "Action": ["amplify:*"],
-      "Resource": "*"
-    },
-    {
-      "Sid": "SES",
-      "Effect": "Allow",
-      "Action": ["ses:*"],
-      "Resource": "*"
-    },
-    {
-      "Sid": "ACM",
-      "Effect": "Allow",
-      "Action": ["acm:*"],
-      "Resource": "*"
-    },
-    {
-      "Sid": "IAMScopedToApp",
+      "Sid": "GlobalResourceActions",
       "Effect": "Allow",
       "Action": [
-        "iam:CreateUser",
-        "iam:DeleteUser",
-        "iam:PutUserPolicy",
-        "iam:DeleteUserPolicy",
-        "iam:GetUser",
-        "iam:GetUserPolicy",
-        "iam:ListUserPolicies",
-        "iam:CreateAccessKey",
-        "iam:DeleteAccessKey",
-        "iam:ListAccessKeys",
-        "iam:TagUser"
-      ],
-      "Resource": "arn:aws:iam::*:user/apps/*"
-    },
-    {
-      "Sid": "DynamoDB",
-      "Effect": "Allow",
-      "Action": ["dynamodb:*"],
-      "Resource": "*"
-    },
-    {
-      "Sid": "EventBridge",
-      "Effect": "Allow",
-      "Action": [
+        "amplify:*",
+        "ses:*",
+        "acm:*",
+        "dynamodb:*",
         "events:CreateConnection",
         "events:DeleteConnection",
         "events:UpdateConnection",
@@ -114,12 +76,53 @@ Terraform needs an IAM user with programmatic access (access key) to provision a
         "events:DisableRule",
         "events:PutTargets",
         "events:RemoveTargets",
-        "events:ListTargetsByRule"
+        "events:ListTargetsByRule",
+        "events:TagResource",
+        "events:UntagResource",
+        "events:ListTagsForResource"
       ],
       "Resource": "*"
     },
     {
-      "Sid": "IAMForScheduler",
+      "Sid": "CreateEventBridgeServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": ["iam:CreateServiceLinkedRole"],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/apidestinations.events.amazonaws.com/*",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "apidestinations.events.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "IAMUsersAndSecrets",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateUser",
+        "iam:DeleteUser",
+        "iam:PutUserPolicy",
+        "iam:DeleteUserPolicy",
+        "iam:GetUser",
+        "iam:GetUserPolicy",
+        "iam:ListUserPolicies",
+        "iam:CreateAccessKey",
+        "iam:DeleteAccessKey",
+        "iam:ListAccessKeys",
+        "iam:TagUser",
+        "secretsmanager:CreateSecret",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:UpdateSecret"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:user/apps/*",
+        "arn:aws:secretsmanager:*:*:secret:events!connection/*"
+      ]
+    },
+    {
+      "Sid": "IAMRoles",
       "Effect": "Allow",
       "Action": [
         "iam:CreateRole",
@@ -131,10 +134,15 @@ Terraform needs an IAM user with programmatic access (access key) to provision a
         "iam:ListRolePolicies",
         "iam:AttachRolePolicy",
         "iam:DetachRolePolicy",
+        "iam:ListAttachedRolePolicies",
+        "iam:ListInstanceProfilesForRole",
         "iam:PassRole",
         "iam:TagRole"
       ],
-      "Resource": "arn:aws:iam::*:role/interior-espacio-*"
+      "Resource": [
+        "arn:aws:iam::*:role/interior-espacio-*",
+        "arn:aws:iam::aws:policy/AdministratorAccess-Amplify"
+      ]
     }
   ]
 }

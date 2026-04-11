@@ -1,7 +1,8 @@
 # Copy this file to terraform.tfvars and fill in real values.
 # terraform.tfvars is git-ignored — never commit it.
 
-aws_region = "us-east-1"
+aws_region  = "us-east-1"
+aws_profile = "espaciointerior"
 
 # GitHub
 github_token      = "ghp_xxxxxxxxxxxxxxxxxxxx"
