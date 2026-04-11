@@ -11,7 +11,8 @@ export type PostMeta = {
   excerpt: string;
   published: boolean;
   source?: "local" | "substack";
-  url?: string; // canonical URL — only set for substack posts
+  url?: string;      // canonical URL — only set for substack posts
+  imageUrl?: string; // cover image — only set for substack posts
 };
 
 export type Post = {

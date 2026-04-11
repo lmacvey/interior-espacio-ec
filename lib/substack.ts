@@ -8,6 +8,7 @@ export type SubstackPost = {
   date: string; // ISO date string
   excerpt: string;
   url: string;
+  imageUrl?: string;
   source: "substack";
 };
 
@@ -24,6 +25,24 @@ function slugFromUrl(url: string): string {
   }
 }
 
+function extractImageUrl(item: Record<string, unknown>): string | undefined {
+  // <enclosure url="..." type="image/jpeg" />
+  const enclosure = item["enclosure"];
+  if (enclosure && typeof enclosure === "object") {
+    const url = (enclosure as Record<string, unknown>)["@_url"];
+    if (typeof url === "string" && url) return url;
+  }
+
+  // <media:content url="..." medium="image" />
+  const media = item["media:content"];
+  if (media && typeof media === "object") {
+    const url = (media as Record<string, unknown>)["@_url"];
+    if (typeof url === "string" && url) return url;
+  }
+
+  return undefined;
+}
+
 export async function getSubstackPosts(): Promise<SubstackPost[]> {
   if (!SUBSTACK_RSS_URL) return [];
 
@@ -35,7 +54,10 @@ export async function getSubstackPosts(): Promise<SubstackPost[]> {
     if (!res.ok) return [];
 
     const xml = await res.text();
-    const parser = new XMLParser({ ignoreAttributes: false });
+    const parser = new XMLParser({
+      ignoreAttributes: false,
+      attributeNamePrefix: "@_",
+    });
     const parsed = parser.parse(xml);
 
     const items: unknown[] = parsed?.rss?.channel?.item ?? [];
@@ -51,6 +73,7 @@ export async function getSubstackPosts(): Promise<SubstackPost[]> {
         const isoDate = rawDate ? new Date(rawDate).toISOString().split("T")[0] : "";
         const rawDesc = String(item.description ?? "");
         const excerpt = stripHtml(rawDesc).slice(0, 200);
+        const imageUrl = extractImageUrl(item);
 
         return {
           id: url,
@@ -59,6 +82,7 @@ export async function getSubstackPosts(): Promise<SubstackPost[]> {
           date: isoDate,
           excerpt,
           url,
+          imageUrl,
           source: "substack" as const,
         };
       })

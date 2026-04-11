@@ -17,6 +17,7 @@ export async function getUnifiedPosts(): Promise<PostMeta[]> {
     published: true,
     source: "substack" as const,
     url: p.url,
+    imageUrl: p.imageUrl,
   }));
 
   return [...local, ...substack].sort((a, b) => (a.date < b.date ? 1 : -1));
