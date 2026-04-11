@@ -27,13 +27,13 @@ Code must degrade gracefully if the feed is empty or unavailable.
 # Publication subdomain (for RSS)
 SUBSTACK_PUBLICATION=          # e.g. espaciointeriorec
 # Handle (for subscribe link) — no @ prefix
-NEXT_PUBLIC_SUBSTACK_HANDLE=   # e.g. espaciointerior
+NEXT_PUBLIC_SUBSTACK_HANDLE=   # e.g. espaciointeriorec
 ```
 
 **`.env.local`** (not committed):
 ```
 SUBSTACK_PUBLICATION=espaciointeriorec
-NEXT_PUBLIC_SUBSTACK_HANDLE=espaciointerior
+NEXT_PUBLIC_SUBSTACK_HANDLE=espaciointeriorec
 ```
 
 `SUBSTACK_PUBLICATION` is server-only (no `NEXT_PUBLIC_`) — the RSS fetch happens server-side only.
