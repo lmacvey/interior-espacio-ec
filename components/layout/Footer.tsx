@@ -40,6 +40,11 @@ export default function Footer() {
                 Contacto
               </Link>
             </li>
+            <li>
+              <Link href="/privacy" className="hover:text-text-primary transition-colors duration-150 py-1 inline-block">
+                Política de Privacidad
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -58,8 +63,12 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-border px-4 md:px-6 py-4 text-center text-xs text-text-muted pb-safe">
-        © {new Date().getFullYear()} Espacio Interior. Todos los derechos reservados.
+      <div className="border-t border-border px-4 md:px-6 py-4 text-center text-xs text-text-muted pb-safe flex flex-col sm:flex-row items-center justify-center gap-2">
+        <span>© {new Date().getFullYear()} Espacio Interior EC. Todos los derechos reservados.</span>
+        <span className="hidden sm:inline">·</span>
+        <Link href="/terminos" className="hover:text-text-primary transition-colors duration-150">
+          Términos y condiciones
+        </Link>
       </div>
     </footer>
   );

@@ -23,5 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  const legalRoutes: MetadataRoute.Sitemap = ["/privacy"].map((route) => ({
+    url: `${SITE_URL}${route}`,
+    lastModified: new Date(),
+    changeFrequency: "yearly" as const,
+    priority: 0.3,
+  }));
+
+  return [...staticRoutes, ...blogRoutes, ...legalRoutes];
 }

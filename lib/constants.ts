@@ -1,6 +1,8 @@
 export const SITE_NAME = "Espacio Interior";
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 export const CONTACT_EMAIL = process.env.CONTACT_EMAIL ?? "contacto@espaciointeriorec.com";
+export const PRIVACY_EMAIL = process.env.PRIVACY_EMAIL ?? "privacy@espaciointeriorec.com";
+export const LEGAL_EMAIL = process.env.LEGAL_EMAIL ?? "use@espaciointeriorec.com";
 
 export const WHATSAPP_NUMBER =
   process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "593XXXXXXXXX";
