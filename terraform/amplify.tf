@@ -83,6 +83,9 @@ NEXT_SERVER_ACTIONS_ENCRYPTION_KEY     = var.next_server_actions_encryption_key
     SUBSTACK_PUBLICATION            = var.substack_publication
     NEXT_PUBLIC_SUBSTACK_HANDLE     = var.next_public_substack_handle
 
+    # Instagram
+    INSTAGRAM_BUSINESS_ACCOUNT_ID = var.instagram_business_account_id
+
     # Substack → Facebook automation
     CRON_SECRET                = var.cron_secret
     DYNAMODB_TABLE_NAME        = aws_dynamodb_table.substack_posts.name
