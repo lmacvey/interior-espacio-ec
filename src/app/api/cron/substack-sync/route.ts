@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { fetchSubstackFeed } from '@/lib/substack'
-import { postToFacebook } from '@/lib/facebook'
+import { getSubstackPosts } from '@/lib/substack'
+import { publishPost } from '@/lib/facebook'
 import { isAlreadyPosted, markAsPosted } from '@/lib/dynamodb'
 
 export async function POST(req: NextRequest) {
@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const posts = await fetchSubstackFeed()
+  const posts = await getSubstackPosts()
   // Process oldest-first to preserve chronological order on the Facebook Page
   const ordered = [...posts].reverse()
 
@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
     }
 
     const message = `${post.title}\n\n${post.excerpt}\n\nLeer más → ${post.url}`
-    const result = await postToFacebook(message)
+    const result = await publishPost(message)
 
     await markAsPosted({
       substackPostId: post.id,
