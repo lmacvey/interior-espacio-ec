@@ -5,7 +5,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ClientProviders from "@/components/layout/ClientProviders";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
-import Analytics from "@/components/layout/Analytics";
+import dynamic from "next/dynamic";
+const Analytics = dynamic(() => import("@/components/layout/Analytics"), { ssr: false });
 
 const inter = Inter({
   variable: "--font-inter",
@@ -75,6 +76,7 @@ export default function RootLayout({
     <html
       lang="es"
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
         <Analytics />
