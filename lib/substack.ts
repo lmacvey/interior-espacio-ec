@@ -72,7 +72,8 @@ export async function getSubstackPosts(): Promise<SubstackPost[]> {
         const rawDate = String(item.pubDate ?? "");
         const isoDate = rawDate ? new Date(rawDate).toISOString().split("T")[0] : "";
         const rawDesc = String(item.description ?? "");
-        const excerpt = stripHtml(rawDesc).slice(0, 200);
+        const rawExcerpt = stripHtml(rawDesc).slice(0, 200);
+        const excerpt = rawExcerpt.length >= 80 ? rawExcerpt : "";
         const imageUrl = extractImageUrl(item);
 
         return {
