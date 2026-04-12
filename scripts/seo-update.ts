@@ -33,8 +33,9 @@ if (fs.existsSync(envPath)) {
     const eq = line.indexOf("=");
     if (eq === -1) continue;
     const key = line.slice(0, eq).trim();
-    const val = line.slice(eq + 1).trim().replace(/^["']|["']$/g, "");
-    if (key && !process.env[key]) process.env[key] = val;
+    const raw = line.slice(eq + 1).trim().replace(/^["']|["']$/g, "");
+    const val = raw.replace(/\s+#.*$/, ""); // strip inline comments
+    if (key && !key.startsWith("#") && val) process.env[key] = process.env[key] ?? val;
   }
 }
 
