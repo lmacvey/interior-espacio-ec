@@ -32,3 +32,6 @@ instagram_url   = "https://www.instagram.com/espaciointerior.ec"
 facebook_url    = "https://www.facebook.com/espaciointerior.ec"
 linkedin_url    = ""
 whatsapp_number = "593XXXXXXXXX"
+
+# Anthropic (used by npm run seo:update locally; also injected into Amplify build)
+anthropic_api_key = "sk-ant-..."

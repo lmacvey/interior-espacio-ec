@@ -43,6 +43,36 @@ function extractImageUrl(item: Record<string, unknown>): string | undefined {
   return undefined;
 }
 
+/**
+ * Fetches the full HTML of a Substack post and returns plain text content.
+ * Used by the seo-update script to give Claude the complete article body.
+ * Substack posts are publicly accessible HTML pages.
+ */
+export async function fetchPostContent(url: string): Promise<string> {
+  try {
+    const res = await fetch(url, {
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; SEOBot/1.0)" },
+    });
+    if (!res.ok) return "";
+    const html = await res.text();
+
+    // Extract the article body — Substack wraps post content in <div class="body markup">
+    // Fall back to stripping all tags if the marker isn't found.
+    const bodyMatch = html.match(
+      /<div[^>]+class="[^"]*body markup[^"]*"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/i
+    );
+    const raw = bodyMatch ? bodyMatch[1] : html;
+
+    return raw
+      .replace(/<[^>]*>/g, " ")   // strip HTML tags
+      .replace(/\s+/g, " ")        // collapse whitespace
+      .trim()
+      .slice(0, 6000);             // cap for Claude token budget
+  } catch {
+    return "";
+  }
+}
+
 export async function getSubstackPosts(): Promise<SubstackPost[]> {
   if (!SUBSTACK_RSS_URL) return [];
 

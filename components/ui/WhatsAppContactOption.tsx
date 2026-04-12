@@ -2,6 +2,7 @@
 
 import { WhatsAppIcon } from "@/components/ui/icons";
 import { WHATSAPP_NUMBER, WHATSAPP_PREFILLED_MESSAGE } from "@/lib/constants";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const WA_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_PREFILLED_MESSAGE}`;
 
@@ -12,6 +13,7 @@ export default function WhatsAppContactOption() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escribir por WhatsApp — abre en una nueva pestaña"
+      onClick={() => trackWhatsAppClick("contact_page")}
       className="flex items-center gap-4 w-full rounded-[var(--radius-lg)] border-[1.5px] border-border bg-surface-1 px-6 py-5 transition-colors duration-200 hover:bg-surface-2 hover:border-border-strong focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--primary-light)] group"
     >
       <span className="flex-shrink-0 w-11 h-11 rounded-full bg-[var(--secondary-light,#e8d9c4)] flex items-center justify-center">

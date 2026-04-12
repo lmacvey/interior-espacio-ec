@@ -91,6 +91,9 @@ NEXT_SERVER_ACTIONS_ENCRYPTION_KEY     = var.next_server_actions_encryption_key
     DYNAMODB_TABLE_NAME        = aws_dynamodb_table.substack_posts.name
     DYNAMODB_ACCESS_KEY_ID     = aws_iam_access_key.app.id
     DYNAMODB_SECRET_ACCESS_KEY = aws_iam_access_key.app.secret
+
+    # Anthropic — used by the seo-update script; available in CI if needed
+    ANTHROPIC_API_KEY = var.anthropic_api_key
   }
 
   # Prevent Amplify from overwriting env vars set manually in the console

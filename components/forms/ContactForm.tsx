@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { AlertCircle, CheckCircle } from "lucide-react";
 import { contactSchema, type ContactFormValues } from "@/lib/validations";
+import { trackFormSubmit } from "@/lib/analytics";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -27,6 +28,7 @@ export default function ContactForm() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error();
+      trackFormSubmit();
       setStatus("success");
       reset();
     } catch {

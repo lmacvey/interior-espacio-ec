@@ -16,12 +16,33 @@ const personSchema = {
   name: "Grace P. Pacheco",
   jobTitle: "Psicóloga Clínica",
   description:
-    "Psicóloga clínica especializada en acompañamiento de transiciones de vida y procesos de cambio. Enfoque no directivo, humanista, sesiones en línea en español e inglés.",
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "Universidad San Francisco de Quito (USFQ)",
-    address: { "@type": "PostalAddress", addressCountry: "EC" },
-  },
+    "Psicóloga clínica con enfoque integrativo especializada en acompañamiento de transiciones de vida y procesos de cambio. Sesiones en línea en español e inglés.",
+  alumniOf: [
+    {
+      "@type": "CollegeOrUniversity",
+      name: "Universidad San Francisco de Quito (USFQ)",
+      address: { "@type": "PostalAddress", addressCountry: "EC" },
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      name: "Fielding Graduate University",
+      address: { "@type": "PostalAddress", addressCountry: "US" },
+    },
+  ],
+  hasCredential: [
+    {
+      "@type": "EducationalOccupationalCredential",
+      name: "Master of Arts in Media Psychology",
+      credentialCategory: "degree",
+      recognizedBy: { "@type": "Organization", name: "Fielding Graduate University" },
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      name: "Human Resources Essentials",
+      credentialCategory: "certification",
+      recognizedBy: { "@type": "Organization", name: "Cornell University" },
+    },
+  ],
   knowsLanguage: ["es", "en"],
   url: `${SITE_URL}/about`,
 };

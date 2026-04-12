@@ -9,26 +9,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     "/contact",
     "/blog",
+    "/privacy",
   ].map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
-    priority: route === "/" ? 1 : 0.8,
+    priority: route === "/" ? 1 : route === "/blog" ? 0.9 : 0.8,
   }));
 
-  const blogRoutes: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
+  // Local markdown posts rendered on our domain — empty for now since blog is
+  // Substack-driven, but kept so any future local posts are auto-included.
+  const localBlogRoutes: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}`,
     lastModified: post.date ? new Date(post.date) : new Date(),
     changeFrequency: "yearly",
     priority: 0.6,
   }));
 
-  const legalRoutes: MetadataRoute.Sitemap = ["/privacy"].map((route) => ({
-    url: `${SITE_URL}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "yearly" as const,
-    priority: 0.3,
-  }));
+  // Substack posts are canonical on substack.com — do NOT include external
+  // URLs in this sitemap (that would confuse Google about domain ownership).
 
-  return [...staticRoutes, ...blogRoutes, ...legalRoutes];
+  return [...staticRoutes, ...localBlogRoutes];
 }

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { WhatsAppIcon } from "@/components/ui/icons";
 import { WHATSAPP_NUMBER, WHATSAPP_PREFILLED_MESSAGE } from "@/lib/constants";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const WA_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_PREFILLED_MESSAGE}`;
 
@@ -25,6 +26,7 @@ export default function WhatsAppFloat() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Escríbeme por WhatsApp"
+          onClick={() => trackWhatsAppClick("floating_button")}
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.7 }}

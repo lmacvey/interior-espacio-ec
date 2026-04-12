@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seo:update": "tsx scripts/seo-update.ts",
+    "seo:check": "tsx scripts/seo-update.ts --check"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.1028.0",
@@ -34,6 +36,7 @@
     "zod": "^3.0.0"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -41,6 +44,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
     "tailwindcss": "^4",
+    "tsx": "^4.0.0",
     "typescript": "^5"
   }
 }

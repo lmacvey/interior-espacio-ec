@@ -150,3 +150,12 @@ variable "cron_secret" {
   type        = string
   sensitive   = true
 }
+
+# ── Anthropic ─────────────────────────────────────────────────────────────────
+
+variable "anthropic_api_key" {
+  description = "Anthropic API key — used by the seo-update script (local) and available in the build environment"
+  type        = string
+  sensitive   = true
+  default     = ""
+}

@@ -22,6 +22,13 @@ export const metadata: Metadata = {
     "acompañamiento emocional",
     "terapia en español",
     "Grace P. Pacheco",
+    "psicóloga online Ecuador",
+    "psicólogo online Quito",
+    "terapia para ansiedad",
+    "terapia individual online",
+    "terapia para expatriados",
+    "consulta psicológica online",
+    "ayuda psicológica online",
   ],
 };
 
@@ -41,16 +48,16 @@ const personSchema = {
 
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["MedicalBusiness", "ProfessionalService"],
   name: SITE_NAME,
+  medicalSpecialty: "Psychiatry",
   description:
     "Acompañamiento psicológico en línea para transiciones de vida, momentos de cambio y procesos internos. Un espacio seguro para volver a ti.",
   provider: { "@type": "Person", name: "Grace P. Pacheco" },
-  serviceType: "Terapia psicológica individual en línea",
-  areaServed: {
-    "@type": "Place",
-    name: "Latinoamérica y comunidad hispanohablante internacional",
-  },
+  areaServed: [
+    { "@type": "Country", name: "Ecuador" },
+    { "@type": "Place", name: "Latinoamérica y comunidad hispanohablante internacional" },
+  ],
   availableLanguage: ["Spanish", "English"],
   url: SITE_URL,
   priceSpecification: {
