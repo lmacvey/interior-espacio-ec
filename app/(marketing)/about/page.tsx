@@ -8,6 +8,16 @@ export const metadata: Metadata = {
   description:
     "Conoce a Grace P. Pacheco, Psicóloga Clínica (USFQ), especializada en acompañamiento de transiciones de vida y procesos de cambio. Sesiones online en español e inglés.",
   alternates: { canonical: `${SITE_URL}/about` },
+  keywords: [
+    "psicóloga clínica",
+    "psicóloga online Ecuador",
+    "Grace P. Pacheco",
+    "terapia en línea",
+    "psicología USFQ",
+    "acompañamiento emocional",
+    "terapia individual",
+    "psicóloga bilingüe",
+  ],
 };
 
 const personSchema = {

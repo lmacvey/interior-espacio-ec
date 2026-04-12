@@ -20,6 +20,15 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Blog",
     description,
     alternates: { canonical: `${SITE_URL}/blog` },
+    keywords: [
+      "salud mental",
+      "bienestar emocional",
+      "reflexiones psicológicas",
+      "transiciones de vida",
+      "autoconocimiento",
+      "emociones",
+      "terapia en línea",
+    ],
     openGraph: {
       type: "website",
       url: `${SITE_URL}/blog`,

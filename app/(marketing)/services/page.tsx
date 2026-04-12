@@ -6,8 +6,20 @@ import { SITE_URL } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Servicios",
   description:
-    "Terapia en línea individual para transiciones de vida, ansiedad, duelos, identidad y relaciones. Grace P. Pacheco, Psicóloga Clínica. Primera sesión de exploración gratuita.",
+    "Terapia en línea individual para transiciones de vida, ansiedad, estrés y relaciones. Grace P. Pacheco, Psicóloga Clínica. Primera sesión de exploración gratuita.",
   alternates: { canonical: `${SITE_URL}/services` },
+  keywords: [
+    "terapia en línea",
+    "terapia emocional",
+    "terapia de estrés",
+    "terapia de pareja",
+    "terapia de acompañamiento emocional",
+    "terapia para ansiedad",
+    "terapia individual online",
+    "transiciones de vida",
+    "acompañamiento emocional",
+    "psicóloga clínica",
+  ],
 };
 
 const serviceSchema = {

@@ -22,7 +22,7 @@ export default function Hero() {
             className="flex flex-wrap gap-2 mb-6"
           >
             <span className="inline-block rounded-full border border-primary-light bg-primary-muted px-4 py-1.5 text-xs font-medium text-primary tracking-wide">
-              Acompañamiento psicológico online
+              Terapia en línea individual
             </span>
             <span className="inline-block rounded-full border border-secondary-light bg-secondary-light px-4 py-1.5 text-xs font-medium text-accent tracking-wide">
               Español · Inglés

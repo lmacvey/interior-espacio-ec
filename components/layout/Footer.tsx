@@ -11,8 +11,8 @@ export default function Footer() {
         <div className="text-primary">
           <Logo size="md" className="mb-3" />
           <p className="text-text-muted leading-relaxed mt-3">
-            Acompañamiento psicológico en línea para transiciones y procesos
-            de cambio.
+            Terapia en línea · Acompañamiento psicológico para transiciones y
+            procesos de cambio.
           </p>
           <SocialLinks />
         </div>

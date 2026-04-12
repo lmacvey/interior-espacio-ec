@@ -29,6 +29,12 @@ export const metadata: Metadata = {
     "terapia para expatriados",
     "consulta psicológica online",
     "ayuda psicológica online",
+    "quiero terapia",
+    "necesito terapia",
+    "empezar terapia",
+    "terapia de acompañamiento emocional",
+    "terapia emocional",
+    "terapia de estrés",
   ],
 };
 
@@ -116,6 +122,22 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Sí. Todo lo que hablamos en sesión es estrictamente confidencial. La confidencialidad es un principio ético fundamental de la práctica psicológica.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Ofreces terapia de pareja?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "En este momento me especializo en terapia individual. Si estás viviendo dificultades en una relación, podemos trabajar desde tu propia experiencia y perspectiva en el proceso individual.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cómo sé si estoy lista para empezar terapia?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No necesitas estar en crisis para comenzar. Si sientes que algo quiere ser comprendido, o que estás atravesando una transición difícil, eso es suficiente. La sesión de exploración gratuita es justamente para que puedas evaluar si este espacio es para ti.",
       },
     },
   ],

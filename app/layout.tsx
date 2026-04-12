@@ -33,10 +33,15 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "terapia en línea",
+    "terapia online",
     "psicología",
+    "psicóloga clínica",
+    "psicología online",
     "transiciones de vida",
     "salud mental",
     "acompañamiento emocional",
+    "bienestar emocional",
+    "terapia individual",
     "Ecuador",
   ],
   openGraph: {
