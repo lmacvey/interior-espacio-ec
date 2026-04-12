@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  env: {
+    CRON_SECRET: process.env.CRON_SECRET ?? "",
+  },
   images: {
     remotePatterns: [
       {
