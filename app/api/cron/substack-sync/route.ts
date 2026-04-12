@@ -7,15 +7,7 @@ export async function POST(request: NextRequest) {
   // Validate cron secret
   const secret = request.headers.get("x-cron-secret");
   if (!secret || secret !== process.env.CRON_SECRET) {
-    return NextResponse.json({
-      error: "Unauthorized",
-      debug: {
-        receivedLength: secret?.length ?? 0,
-        envLength: process.env.CRON_SECRET?.length ?? 0,
-        receivedLast4: secret?.slice(-4) ?? "",
-        envLast4: process.env.CRON_SECRET?.slice(-4) ?? "",
-      }
-    }, { status: 401 });
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   const posts = await getSubstackPosts();
