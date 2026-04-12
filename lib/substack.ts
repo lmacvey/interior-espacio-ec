@@ -87,6 +87,8 @@ export async function getSubstackPosts(): Promise<SubstackPost[]> {
     const parser = new XMLParser({
       ignoreAttributes: false,
       attributeNamePrefix: "@_",
+      processEntities: true,
+      htmlEntities: true,
     });
     const parsed = parser.parse(xml);
 
