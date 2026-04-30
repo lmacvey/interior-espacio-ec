@@ -19,7 +19,7 @@ variable "github_token" {
 }
 
 variable "github_repository" {
-  description = "GitHub repo URL, e.g. https://github.com/your-org/interior-espacio-ec"
+  description = "GitHub repo URL, e.g. https://github.com/CelerArc/espacio-interior-ec"
   type        = string
 }
 

@@ -6,7 +6,7 @@ aws_profile = "espaciointerior"
 
 # GitHub
 github_token      = "ghp_xxxxxxxxxxxxxxxxxxxx"
-github_repository = "https://github.com/your-org/interior-espacio-ec"
+github_repository = "https://github.com/CelerArc/espacio-interior-ec"
 github_branch     = "main"
 
 # Domain

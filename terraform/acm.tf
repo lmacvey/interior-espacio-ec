@@ -25,15 +25,12 @@ locals {
   }
 }
 
-# NOTE: Validation is not automated here because DNS is managed at an external
-# registrar. Add the records from output.acm_validation_dns_records to your
-# registrar, then run: terraform apply (the certificate will validate automatically
-# once DNS propagates — up to 30 minutes).
 resource "aws_acm_certificate_validation" "site" {
   provider        = aws.us_east_1
   certificate_arn = aws_acm_certificate.site.arn
 
-  # No validation_record_fqdns — we rely on DNS propagation after manual record entry
+  validation_record_fqdns = [for record in aws_route53_record.acm_validation : record.fqdn]
+
   timeouts {
     create = "45m"
   }

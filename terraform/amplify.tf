@@ -23,7 +23,7 @@ resource "aws_iam_role_policy_attachment" "amplify_build" {
 }
 
 resource "aws_amplify_app" "site" {
-  name                 = "interior-espacio-ec"
+  name                 = "espacio-interior-ec"
   repository           = var.github_repository
   access_token         = var.github_token
   iam_service_role_arn = aws_iam_role.amplify_build.arn

@@ -1,3 +1,10 @@
+# ── Route 53 ──────────────────────────────────────────────────────────────────
+
+output "route53_nameservers" {
+  description = "Set these 4 NS records at Spaceship to delegate DNS to Route 53"
+  value       = aws_route53_zone.site.name_servers
+}
+
 # ── ACM certificate ───────────────────────────────────────────────────────────
 
 output "acm_certificate_arn" {
